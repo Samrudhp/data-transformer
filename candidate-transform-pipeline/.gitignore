@@ -1,0 +1,58 @@
+# Virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.xml
+
+# # Pipeline output
+# output/
+# !output/.gitkeep
+
+# Environment variables / secrets
+.env
+.env.*
+*.env
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# mypy / ruff / black caches
+.mypy_cache/
+.ruff_cache/
