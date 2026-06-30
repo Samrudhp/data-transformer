@@ -1,0 +1,90 @@
+{
+  "candidate_id": "cluster_15",
+  "personal_info": {
+    "first_name": "Vikram",
+    "last_name": "Reddy",
+    "full_name": "Vikram Reddy",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "vikram.reddy@gmail.com",
+    "phone": null,
+    "address": null,
+    "city": "Hyderabad, India",
+    "state": null,
+    "country": null,
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [],
+  "projects": [],
+  "skills": [
+    "Kotlin",
+    "Java"
+  ],
+  "links": {
+    "linkedin": null,
+    "github": "https://github.com/vikramreddy",
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.4,
+    "confidence_scores": {
+      "github": 0.5,
+      "coverage": 0.5
+    },
+    "supporting_sources": [
+      "github"
+    ],
+    "reasons": [
+      "reliability=0.50  coverage=0.50  conflicts=0  sources=['github']",
+      "Score 0.40 is below threshold 0.50."
+    ]
+  },
+  "provenance": [
+    {
+      "source": "github",
+      "original_value": "Vikram Reddy",
+      "transformed_value": "Vikram Reddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758963"
+    },
+    {
+      "source": "github",
+      "original_value": "vikram.reddy@gmail.com",
+      "transformed_value": "vikram.reddy@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758969"
+    },
+    {
+      "source": "github",
+      "original_value": "Hyderabad, India",
+      "transformed_value": "Hyderabad, India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758971"
+    },
+    {
+      "source": "github",
+      "original_value": [
+        "Kotlin",
+        "Java"
+      ],
+      "transformed_value": [
+        "Kotlin",
+        "Java"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758974"
+    },
+    {
+      "source": "github",
+      "original_value": "https://github.com/vikramreddy",
+      "transformed_value": "https://github.com/vikramreddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758981"
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "candidate_id": "cluster_0",
+  "personal_info": {
+    "first_name": "Samrudh",
+    "last_name": "Prakash",
+    "full_name": "Samrudh Prakash",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "samrudh.prakash@gmail.com",
+    "phone": "+919900112233",
+    "address": null,
+    "city": "Bengaluru",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [
+    {
+      "institution": "NIT Surathkal",
+      "degree": "B.Tech",
+      "field_of_study": "Computer Science",
+      "start_date": "2016-07",
+      "end_date": "2020-06",
+      "gpa": 8.4
+    }
+  ],
+  "experience": [
+    {
+      "company": "Zepto",
+      "title": "Senior Backend Engineer",
+      "location": "Bengaluru",
+      "start_date": "2022-08",
+      "end_date": null,
+      "description": "Designing high-throughput order management APIs.",
+      "is_current": true
+    },
+    {
+      "company": "Freshworks",
+      "title": "Software Engineer",
+      "location": "Chennai",
+      "start_date": "2020-07",
+      "end_date": "2022-07",
+      "description": "Built SaaS CRM microservices.",
+      "is_current": false
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Docker",
+    "Kubernetes",
+    "Redis"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/samrudhp",
+    "github": "https://github.com/samrudhp",
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.8137,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 1.0
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=1.00  conflicts=2  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='github': 3 sources agree \u2192 +0.10",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 2 sources agree \u2192 +0.05",
+      "2 field conflict(s) detected \u2192 -0.16"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Samrudh Prakash",
+      "transformed_value": "Samrudh Prakash",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745178"
+    },
+    {
+      "source": "ats",
+      "original_value": "Samrudh Prakash",
+      "transformed_value": "Samrudh Prakash",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745389"
+    },
+    {
+      "source": "resume",
+      "original_value": "Samrudh Prakash",
+      "transformed_value": "Samrudh Prakash",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745392"
+    },
+    {
+      "source": "csv",
+      "original_value": "samrudh.prakash@gmail.com",
+      "transformed_value": "samrudh.prakash@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745403"
+    },
+    {
+      "source": "ats",
+      "original_value": "samrudh.prakash@gmail.com",
+      "transformed_value": "samrudh.prakash@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745405"
+    },
+    {
+      "source": "resume",
+      "original_value": "samrudh.prakash@gmail.com",
+      "transformed_value": "samrudh.prakash@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745409"
+    },
+    {
+      "source": "csv",
+      "original_value": "+919900112233",
+      "transformed_value": "+919900112233",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745411"
+    },
+    {
+      "source": "ats",
+      "original_value": "+919900112233",
+      "transformed_value": "+919900112233",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745415"
+    },
+    {
+      "source": "resume",
+      "original_value": "+919900112233",
+      "transformed_value": "+919900112233",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745417"
+    },
+    {
+      "source": "csv",
+      "original_value": "Bengaluru",
+      "transformed_value": "Bengaluru",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745419"
+    },
+    {
+      "source": "ats",
+      "original_value": "Bengaluru",
+      "transformed_value": "Bengaluru",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745420"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745422"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745423"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "institution": "NIT Surathkal",
+          "degree": "B.Tech",
+          "field_of_study": "Computer Science",
+          "start_date": "2016-07",
+          "end_date": "2020-06",
+          "gpa": 8.4
+        }
+      ],
+      "transformed_value": [
+        {
+          "institution": "NIT Surathkal",
+          "degree": "B.Tech",
+          "field_of_study": "Computer Science",
+          "start_date": "2016-07",
+          "end_date": "2020-06",
+          "gpa": 8.4
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745433"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "Zepto",
+          "title": "Senior Backend Engineer",
+          "location": "Bengaluru",
+          "start_date": "2022-08",
+          "end_date": "present",
+          "description": "Designing high-throughput order management APIs."
+        },
+        {
+          "company": "Freshworks",
+          "title": "Software Engineer",
+          "location": "Chennai",
+          "start_date": "2020-07",
+          "end_date": "2022-07",
+          "description": "Built SaaS CRM microservices."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "Zepto",
+          "title": "Senior Backend Engineer",
+          "location": "Bengaluru",
+          "start_date": "2022-08",
+          "end_date": "present",
+          "description": "Designing high-throughput order management APIs."
+        },
+        {
+          "company": "Freshworks",
+          "title": "Software Engineer",
+          "location": "Chennai",
+          "start_date": "2020-07",
+          "end_date": "2022-07",
+          "description": "Built SaaS CRM microservices."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745446"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes"
+      ],
+      "transformed_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "Redis"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745450"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "Redis"
+      ],
+      "transformed_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "Redis"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745451"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "Redis"
+      ],
+      "transformed_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes",
+        "Redis"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745452"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/samrudhp",
+      "transformed_value": "https://linkedin.com/in/samrudhp",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745461"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/samrudhp",
+      "transformed_value": "https://linkedin.com/in/samrudhp",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745462"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/samrudhp",
+      "transformed_value": "https://linkedin.com/in/samrudhp",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745464"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://github.com/samrudhp",
+      "transformed_value": "https://github.com/samrudhp",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745466"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://github.com/samrudhp",
+      "transformed_value": "https://github.com/samrudhp",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745467"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://github.com/samrudhp",
+      "transformed_value": "https://github.com/samrudhp",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.745468"
+    }
+  ]
+}

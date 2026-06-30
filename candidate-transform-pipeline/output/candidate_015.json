@@ -1,0 +1,90 @@
+{
+  "candidate_id": "cluster_14",
+  "personal_info": {
+    "first_name": "Karan",
+    "last_name": "Joshi",
+    "full_name": "Karan Joshi",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "karan.joshi@gmail.com",
+    "phone": null,
+    "address": null,
+    "city": "Delhi, India",
+    "state": null,
+    "country": null,
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [],
+  "projects": [],
+  "skills": [
+    "Python",
+    "JavaScript"
+  ],
+  "links": {
+    "linkedin": null,
+    "github": "https://github.com/karanjoshi",
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.4,
+    "confidence_scores": {
+      "github": 0.5,
+      "coverage": 0.5
+    },
+    "supporting_sources": [
+      "github"
+    ],
+    "reasons": [
+      "reliability=0.50  coverage=0.50  conflicts=0  sources=['github']",
+      "Score 0.40 is below threshold 0.50."
+    ]
+  },
+  "provenance": [
+    {
+      "source": "github",
+      "original_value": "Karan Joshi",
+      "transformed_value": "Karan Joshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758312"
+    },
+    {
+      "source": "github",
+      "original_value": "karan.joshi@gmail.com",
+      "transformed_value": "karan.joshi@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758317"
+    },
+    {
+      "source": "github",
+      "original_value": "Delhi, India",
+      "transformed_value": "Delhi, India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758319"
+    },
+    {
+      "source": "github",
+      "original_value": [
+        "Python",
+        "JavaScript"
+      ],
+      "transformed_value": [
+        "Python",
+        "JavaScript"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758323"
+    },
+    {
+      "source": "github",
+      "original_value": "https://github.com/karanjoshi",
+      "transformed_value": "https://github.com/karanjoshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.758327"
+    }
+  ]
+}

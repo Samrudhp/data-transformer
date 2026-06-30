@@ -1,0 +1,325 @@
+{
+  "candidate_id": "cluster_5",
+  "personal_info": {
+    "first_name": "Priya",
+    "last_name": "Sharma",
+    "full_name": "Priya Sharma",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "priya.sharma@gmail.com",
+    "phone": "+919876543210",
+    "address": null,
+    "city": "Bengaluru",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [
+    {
+      "institution": "IIT Bombay",
+      "degree": "B.Tech",
+      "field_of_study": "Computer Science",
+      "start_date": "2015-07",
+      "end_date": "2019-06",
+      "gpa": 8.7
+    }
+  ],
+  "experience": [
+    {
+      "company": "Flipkart",
+      "title": "Senior Software Engineer",
+      "location": "Bangalore",
+      "start_date": "2021-06",
+      "end_date": null,
+      "description": "Led backend services for recommendation engine.",
+      "is_current": true
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Docker",
+    "Kubernetes"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/priyasharma",
+    "github": "https://github.com/priyasharma-dev",
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.8252,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 1.0
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=1.00  conflicts=1  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='github': 3 sources agree \u2192 +0.10",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 3 sources agree \u2192 +0.10",
+      "1 field conflict(s) detected \u2192 -0.08"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Priya Sharma",
+      "transformed_value": "Priya Sharma",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751022"
+    },
+    {
+      "source": "ats",
+      "original_value": "Priya Sharma",
+      "transformed_value": "Priya Sharma",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751025"
+    },
+    {
+      "source": "resume",
+      "original_value": "Priya Sharma",
+      "transformed_value": "Priya Sharma",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751026"
+    },
+    {
+      "source": "csv",
+      "original_value": "priya.sharma@gmail.com",
+      "transformed_value": "priya.sharma@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751032"
+    },
+    {
+      "source": "ats",
+      "original_value": "priya.sharma@gmail.com",
+      "transformed_value": "priya.sharma@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751033"
+    },
+    {
+      "source": "resume",
+      "original_value": "priya.sharma@gmail.com",
+      "transformed_value": "priya.sharma@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751034"
+    },
+    {
+      "source": "csv",
+      "original_value": "+919876543210",
+      "transformed_value": "+919876543210",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751036"
+    },
+    {
+      "source": "ats",
+      "original_value": "+919876543210",
+      "transformed_value": "+919876543210",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751037"
+    },
+    {
+      "source": "resume",
+      "original_value": "+919876543210",
+      "transformed_value": "+919876543210",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751039"
+    },
+    {
+      "source": "csv",
+      "original_value": "Bengaluru",
+      "transformed_value": "Bengaluru",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751040"
+    },
+    {
+      "source": "ats",
+      "original_value": "Bengaluru",
+      "transformed_value": "Bengaluru",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751042"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751044"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751045"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "institution": "IIT Bombay",
+          "degree": "B.Tech",
+          "field_of_study": "Computer Science",
+          "start_date": "2015-07",
+          "end_date": "2019-06",
+          "gpa": 8.7
+        }
+      ],
+      "transformed_value": [
+        {
+          "institution": "IIT Bombay",
+          "degree": "B.Tech",
+          "field_of_study": "Computer Science",
+          "start_date": "2015-07",
+          "end_date": "2019-06",
+          "gpa": 8.7
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751050"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "Flipkart",
+          "title": "Senior Software Engineer",
+          "location": "Bangalore",
+          "start_date": "2021-06",
+          "end_date": "present",
+          "description": "Led backend services for recommendation engine."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "Flipkart",
+          "title": "Senior Software Engineer",
+          "location": "Bangalore",
+          "start_date": "2021-06",
+          "end_date": "present",
+          "description": "Led backend services for recommendation engine."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751056"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes"
+      ],
+      "transformed_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751059"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes"
+      ],
+      "transformed_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751060"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes"
+      ],
+      "transformed_value": [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "Kubernetes"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751061"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/priyasharma",
+      "transformed_value": "https://linkedin.com/in/priyasharma",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751065"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/priyasharma",
+      "transformed_value": "https://linkedin.com/in/priyasharma",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751067"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/priyasharma",
+      "transformed_value": "https://linkedin.com/in/priyasharma",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751068"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://github.com/priyasharma-dev",
+      "transformed_value": "https://github.com/priyasharma-dev",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751073"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://github.com/priyasharma-dev",
+      "transformed_value": "https://github.com/priyasharma-dev",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751075"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://github.com/priyasharma-dev",
+      "transformed_value": "https://github.com/priyasharma-dev",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751076"
+    }
+  ]
+}

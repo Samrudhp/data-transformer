@@ -1,0 +1,297 @@
+{
+  "candidate_id": "cluster_7",
+  "personal_info": {
+    "first_name": "Karan",
+    "last_name": "Joshi",
+    "full_name": "Karan Joshi",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "karan.joshi@gmail.com",
+    "phone": "+919988776655",
+    "address": null,
+    "city": "Delhi",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [
+    {
+      "company": "Paytm",
+      "title": "Full Stack Developer",
+      "location": "Delhi",
+      "start_date": "2020-03",
+      "end_date": null,
+      "description": "Developing payment gateway integrations.",
+      "is_current": true
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "Python",
+    "Django",
+    "MySQL",
+    "Redis",
+    "Celery",
+    "React"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/karanjoshi",
+    "github": "https://github.com/karanjoshi",
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.7637,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 0.8333
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=0.83  conflicts=2  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='github': 3 sources agree \u2192 +0.10",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 2 sources agree \u2192 +0.05",
+      "2 field conflict(s) detected \u2192 -0.16"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Karan Joshi",
+      "transformed_value": "Karan Joshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752790"
+    },
+    {
+      "source": "ats",
+      "original_value": "Karan Joshi",
+      "transformed_value": "Karan Joshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752793"
+    },
+    {
+      "source": "resume",
+      "original_value": "Karan Joshi",
+      "transformed_value": "Karan Joshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752794"
+    },
+    {
+      "source": "csv",
+      "original_value": "karan.joshi@gmail.com",
+      "transformed_value": "karan.joshi@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752800"
+    },
+    {
+      "source": "ats",
+      "original_value": "karan.joshi@gmail.com",
+      "transformed_value": "karan.joshi@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752804"
+    },
+    {
+      "source": "resume",
+      "original_value": "karan.joshi@gmail.com",
+      "transformed_value": "karan.joshi@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752805"
+    },
+    {
+      "source": "csv",
+      "original_value": "+919988776655",
+      "transformed_value": "+919988776655",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752807"
+    },
+    {
+      "source": "ats",
+      "original_value": "+919988776655",
+      "transformed_value": "+919988776655",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752809"
+    },
+    {
+      "source": "resume",
+      "original_value": "+919988776655",
+      "transformed_value": "+919988776655",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752810"
+    },
+    {
+      "source": "csv",
+      "original_value": "Delhi",
+      "transformed_value": "Delhi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752812"
+    },
+    {
+      "source": "ats",
+      "original_value": "Delhi",
+      "transformed_value": "Delhi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752813"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752815"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752816"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "Paytm",
+          "title": "Full Stack Developer",
+          "location": "Delhi",
+          "start_date": "2020-03",
+          "end_date": "present",
+          "description": "Developing payment gateway integrations."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "Paytm",
+          "title": "Full Stack Developer",
+          "location": "Delhi",
+          "start_date": "2020-03",
+          "end_date": "present",
+          "description": "Developing payment gateway integrations."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752822"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "Python",
+        "Django",
+        "MySQL",
+        "Redis",
+        "Celery"
+      ],
+      "transformed_value": [
+        "Python",
+        "Django",
+        "MySQL",
+        "Redis",
+        "Celery",
+        "React"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752825"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "Python",
+        "Django",
+        "MySQL",
+        "Redis",
+        "Celery",
+        "React"
+      ],
+      "transformed_value": [
+        "Python",
+        "Django",
+        "MySQL",
+        "Redis",
+        "Celery",
+        "React"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752826"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "Python",
+        "Django",
+        "MySQL",
+        "Redis",
+        "Celery",
+        "React"
+      ],
+      "transformed_value": [
+        "Python",
+        "Django",
+        "MySQL",
+        "Redis",
+        "Celery",
+        "React"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752828"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/karanjoshi",
+      "transformed_value": "https://linkedin.com/in/karanjoshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752834"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/karanjoshi",
+      "transformed_value": "https://linkedin.com/in/karanjoshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752835"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/karanjoshi",
+      "transformed_value": "https://linkedin.com/in/karanjoshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752902"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://github.com/karanjoshi",
+      "transformed_value": "https://github.com/karanjoshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752904"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://github.com/karanjoshi",
+      "transformed_value": "https://github.com/karanjoshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752906"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://github.com/karanjoshi",
+      "transformed_value": "https://github.com/karanjoshi",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.752907"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "candidate_id": "cluster_13",
+  "personal_info": {
+    "first_name": "Priya",
+    "last_name": "Sharma",
+    "full_name": "Priya Sharma",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "priya.sharma@gmail.com",
+    "phone": null,
+    "address": null,
+    "city": "Bengaluru, India",
+    "state": null,
+    "country": null,
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [],
+  "projects": [],
+  "skills": [
+    "Python",
+    "Go"
+  ],
+  "links": {
+    "linkedin": null,
+    "github": "https://github.com/priyasharma-dev",
+    "portfolio": "https://priyasharma.dev",
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.4,
+    "confidence_scores": {
+      "github": 0.5,
+      "coverage": 0.5
+    },
+    "supporting_sources": [
+      "github"
+    ],
+    "reasons": [
+      "reliability=0.50  coverage=0.50  conflicts=0  sources=['github']",
+      "Score 0.40 is below threshold 0.50."
+    ]
+  },
+  "provenance": [
+    {
+      "source": "github",
+      "original_value": "Priya Sharma",
+      "transformed_value": "Priya Sharma",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.757646"
+    },
+    {
+      "source": "github",
+      "original_value": "priya.sharma@gmail.com",
+      "transformed_value": "priya.sharma@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.757652"
+    },
+    {
+      "source": "github",
+      "original_value": "Bengaluru, India",
+      "transformed_value": "Bengaluru, India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.757654"
+    },
+    {
+      "source": "github",
+      "original_value": [
+        "Python",
+        "Go"
+      ],
+      "transformed_value": [
+        "Python",
+        "Go"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.757658"
+    },
+    {
+      "source": "github",
+      "original_value": "https://github.com/priyasharma-dev",
+      "transformed_value": "https://github.com/priyasharma-dev",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.757662"
+    },
+    {
+      "source": "github",
+      "original_value": "https://priyasharma.dev",
+      "transformed_value": "https://priyasharma.dev",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.757664"
+    }
+  ]
+}

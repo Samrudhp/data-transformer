@@ -1,0 +1,275 @@
+{
+  "candidate_id": "cluster_4",
+  "personal_info": {
+    "first_name": "Arjun",
+    "last_name": "Nair",
+    "full_name": "Arjun Nair",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "arjun.nair@gmail.com",
+    "phone": "+917788996655",
+    "address": null,
+    "city": "Bengaluru",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [
+    {
+      "company": "Ola",
+      "title": "DevOps Engineer",
+      "location": "Bengaluru",
+      "start_date": "2021-01",
+      "end_date": null,
+      "description": "Managing cloud infrastructure for ride-hailing platform.",
+      "is_current": true
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "Go",
+    "Kubernetes",
+    "Terraform",
+    "AWS",
+    "CI/CD",
+    "Prometheus"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/arjunnair",
+    "github": null,
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.7487,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 0.8333
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=0.83  conflicts=2  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 2 sources agree \u2192 +0.05",
+      "2 field conflict(s) detected \u2192 -0.16"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Arjun Nair",
+      "transformed_value": "Arjun Nair",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750105"
+    },
+    {
+      "source": "ats",
+      "original_value": "Arjun Nair",
+      "transformed_value": "Arjun Nair",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750107"
+    },
+    {
+      "source": "resume",
+      "original_value": "Arjun Nair",
+      "transformed_value": "Arjun Nair",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750109"
+    },
+    {
+      "source": "csv",
+      "original_value": "arjun.nair@gmail.com",
+      "transformed_value": "arjun.nair@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750115"
+    },
+    {
+      "source": "ats",
+      "original_value": "arjun.nair@gmail.com",
+      "transformed_value": "arjun.nair@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750116"
+    },
+    {
+      "source": "resume",
+      "original_value": "arjun.nair@gmail.com",
+      "transformed_value": "arjun.nair@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750118"
+    },
+    {
+      "source": "csv",
+      "original_value": "+917788996655",
+      "transformed_value": "+917788996655",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750120"
+    },
+    {
+      "source": "ats",
+      "original_value": "+917788996655",
+      "transformed_value": "+917788996655",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750121"
+    },
+    {
+      "source": "resume",
+      "original_value": "+917788996655",
+      "transformed_value": "+917788996655",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750122"
+    },
+    {
+      "source": "csv",
+      "original_value": "Bengaluru",
+      "transformed_value": "Bengaluru",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750124"
+    },
+    {
+      "source": "ats",
+      "original_value": "Bengaluru",
+      "transformed_value": "Bengaluru",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750125"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750127"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750129"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "Ola",
+          "title": "DevOps Engineer",
+          "location": "Bengaluru",
+          "start_date": "2021-01",
+          "end_date": "present",
+          "description": "Managing cloud infrastructure for ride-hailing platform."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "Ola",
+          "title": "DevOps Engineer",
+          "location": "Bengaluru",
+          "start_date": "2021-01",
+          "end_date": "present",
+          "description": "Managing cloud infrastructure for ride-hailing platform."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750134"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "Go",
+        "Kubernetes",
+        "Terraform",
+        "AWS",
+        "CI/CD"
+      ],
+      "transformed_value": [
+        "Go",
+        "Kubernetes",
+        "Terraform",
+        "AWS",
+        "CI/CD",
+        "Prometheus"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750140"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "Go",
+        "Kubernetes",
+        "Terraform",
+        "AWS",
+        "CI/CD",
+        "Prometheus"
+      ],
+      "transformed_value": [
+        "Go",
+        "Kubernetes",
+        "Terraform",
+        "AWS",
+        "CI/CD",
+        "Prometheus"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750144"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "Go",
+        "Kubernetes",
+        "Terraform",
+        "AWS",
+        "CI/CD",
+        "Prometheus"
+      ],
+      "transformed_value": [
+        "Go",
+        "Kubernetes",
+        "Terraform",
+        "AWS",
+        "CI/CD",
+        "Prometheus"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750145"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/arjunnair",
+      "transformed_value": "https://linkedin.com/in/arjunnair",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750149"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/arjunnair",
+      "transformed_value": "https://linkedin.com/in/arjunnair",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750151"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/arjunnair",
+      "transformed_value": "https://linkedin.com/in/arjunnair",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.750152"
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "candidate_id": "cluster_3",
+  "personal_info": {
+    "first_name": "Divya",
+    "last_name": "Krishnan",
+    "full_name": "Divya Krishnan",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "divya.krishnan@yahoo.com",
+    "phone": "+918877665544",
+    "address": null,
+    "city": "Chennai",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [
+    {
+      "institution": "IIT Madras",
+      "degree": "M.Tech",
+      "field_of_study": "Data Science",
+      "start_date": "2018-07",
+      "end_date": "2020-06",
+      "gpa": 9.1
+    }
+  ],
+  "experience": [
+    {
+      "company": "Freshworks",
+      "title": "Data Scientist",
+      "location": "Chennai",
+      "start_date": "2020-08",
+      "end_date": null,
+      "description": "Built ML models for customer churn prediction.",
+      "is_current": true
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "Machine Learning",
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "Spark",
+    "SQL"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/divyakrishnan",
+    "github": "https://github.com/divyakrishnan",
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.8062,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 1.0
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=1.00  conflicts=2  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='github': 2 sources agree \u2192 +0.05",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 2 sources agree \u2192 +0.05",
+      "2 field conflict(s) detected \u2192 -0.16"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Divya Krishnan",
+      "transformed_value": "Divya Krishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749210"
+    },
+    {
+      "source": "ats",
+      "original_value": "Divya Krishnan",
+      "transformed_value": "Divya Krishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749212"
+    },
+    {
+      "source": "resume",
+      "original_value": "Divya Krishnan",
+      "transformed_value": "Divya Krishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749214"
+    },
+    {
+      "source": "csv",
+      "original_value": "divya.krishnan@yahoo.com",
+      "transformed_value": "divya.krishnan@yahoo.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749220"
+    },
+    {
+      "source": "ats",
+      "original_value": "divya.krishnan@yahoo.com",
+      "transformed_value": "divya.krishnan@yahoo.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749221"
+    },
+    {
+      "source": "resume",
+      "original_value": "divya.krishnan@yahoo.com",
+      "transformed_value": "divya.krishnan@yahoo.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749223"
+    },
+    {
+      "source": "csv",
+      "original_value": "+918877665544",
+      "transformed_value": "+918877665544",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749224"
+    },
+    {
+      "source": "ats",
+      "original_value": "+918877665544",
+      "transformed_value": "+918877665544",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749226"
+    },
+    {
+      "source": "resume",
+      "original_value": "+918877665544",
+      "transformed_value": "+918877665544",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749227"
+    },
+    {
+      "source": "csv",
+      "original_value": "Chennai",
+      "transformed_value": "Chennai",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749229"
+    },
+    {
+      "source": "ats",
+      "original_value": "Chennai",
+      "transformed_value": "Chennai",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749230"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749232"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749233"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "institution": "IIT Madras",
+          "degree": "M.Tech",
+          "field_of_study": "Data Science",
+          "start_date": "2018-07",
+          "end_date": "2020-06",
+          "gpa": 9.1
+        }
+      ],
+      "transformed_value": [
+        {
+          "institution": "IIT Madras",
+          "degree": "M.Tech",
+          "field_of_study": "Data Science",
+          "start_date": "2018-07",
+          "end_date": "2020-06",
+          "gpa": 9.1
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749239"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "Freshworks",
+          "title": "Data Scientist",
+          "location": "Chennai",
+          "start_date": "2020-08",
+          "end_date": "present",
+          "description": "Built ML models for customer churn prediction."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "Freshworks",
+          "title": "Data Scientist",
+          "location": "Chennai",
+          "start_date": "2020-08",
+          "end_date": "present",
+          "description": "Built ML models for customer churn prediction."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749244"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "Machine Learning",
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Spark"
+      ],
+      "transformed_value": [
+        "Machine Learning",
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Spark",
+        "SQL"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749247"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "Machine Learning",
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Spark",
+        "SQL"
+      ],
+      "transformed_value": [
+        "Machine Learning",
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Spark",
+        "SQL"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749249"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "Machine Learning",
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Spark",
+        "SQL"
+      ],
+      "transformed_value": [
+        "Machine Learning",
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Spark",
+        "SQL"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749250"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/divyakrishnan",
+      "transformed_value": "https://linkedin.com/in/divyakrishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749254"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/divyakrishnan",
+      "transformed_value": "https://linkedin.com/in/divyakrishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749255"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/divyakrishnan",
+      "transformed_value": "https://linkedin.com/in/divyakrishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749257"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://github.com/divyakrishnan",
+      "transformed_value": "https://github.com/divyakrishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749258"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://github.com/divyakrishnan",
+      "transformed_value": "https://github.com/divyakrishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.749260"
+    }
+  ]
+}

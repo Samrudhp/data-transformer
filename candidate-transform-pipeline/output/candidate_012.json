@@ -1,0 +1,97 @@
+{
+  "candidate_id": "cluster_11",
+  "personal_info": {
+    "first_name": "Aisha",
+    "last_name": "Patel",
+    "full_name": "Aisha Patel",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "aisha.patel@gmail.com",
+    "phone": null,
+    "address": null,
+    "city": "Mumbai, India",
+    "state": null,
+    "country": null,
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [],
+  "projects": [],
+  "skills": [
+    "TypeScript",
+    "JavaScript"
+  ],
+  "links": {
+    "linkedin": null,
+    "github": "https://github.com/aishapatel",
+    "portfolio": "https://aishapatel.in",
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.4,
+    "confidence_scores": {
+      "github": 0.5,
+      "coverage": 0.5
+    },
+    "supporting_sources": [
+      "github"
+    ],
+    "reasons": [
+      "reliability=0.50  coverage=0.50  conflicts=0  sources=['github']",
+      "Score 0.40 is below threshold 0.50."
+    ]
+  },
+  "provenance": [
+    {
+      "source": "github",
+      "original_value": "Aisha Patel",
+      "transformed_value": "Aisha Patel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.756315"
+    },
+    {
+      "source": "github",
+      "original_value": "aisha.patel@gmail.com",
+      "transformed_value": "aisha.patel@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.756322"
+    },
+    {
+      "source": "github",
+      "original_value": "Mumbai, India",
+      "transformed_value": "Mumbai, India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.756324"
+    },
+    {
+      "source": "github",
+      "original_value": [
+        "TypeScript",
+        "JavaScript"
+      ],
+      "transformed_value": [
+        "TypeScript",
+        "JavaScript"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.756328"
+    },
+    {
+      "source": "github",
+      "original_value": "https://github.com/aishapatel",
+      "transformed_value": "https://github.com/aishapatel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.756333"
+    },
+    {
+      "source": "github",
+      "original_value": "https://aishapatel.in",
+      "transformed_value": "https://aishapatel.in",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.756334"
+    }
+  ]
+}

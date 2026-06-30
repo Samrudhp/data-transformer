@@ -1,0 +1,297 @@
+{
+  "candidate_id": "cluster_9",
+  "personal_info": {
+    "first_name": "Vikram",
+    "last_name": "Reddy",
+    "full_name": "Vikram Reddy",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "vikram.reddy@gmail.com",
+    "phone": "+917766554433",
+    "address": null,
+    "city": "Hyderabad",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [
+    {
+      "company": "Byju's",
+      "title": "Android Developer",
+      "location": "Hyderabad",
+      "start_date": "2020-10",
+      "end_date": null,
+      "description": "Developing ed-tech Android applications.",
+      "is_current": true
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "Android",
+    "Kotlin",
+    "Java",
+    "Jetpack Compose",
+    "Firebase",
+    "REST API"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/vikramreddy",
+    "github": "https://github.com/vikramreddy",
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.7637,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 0.8333
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=0.83  conflicts=2  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='github': 3 sources agree \u2192 +0.10",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 2 sources agree \u2192 +0.05",
+      "2 field conflict(s) detected \u2192 -0.16"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Vikram Reddy",
+      "transformed_value": "Vikram Reddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754644"
+    },
+    {
+      "source": "ats",
+      "original_value": "Vikram Reddy",
+      "transformed_value": "Vikram Reddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754647"
+    },
+    {
+      "source": "resume",
+      "original_value": "Vikram Reddy",
+      "transformed_value": "Vikram Reddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754648"
+    },
+    {
+      "source": "csv",
+      "original_value": "vikram.reddy@gmail.com",
+      "transformed_value": "vikram.reddy@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754654"
+    },
+    {
+      "source": "ats",
+      "original_value": "vikram.reddy@gmail.com",
+      "transformed_value": "vikram.reddy@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754655"
+    },
+    {
+      "source": "resume",
+      "original_value": "vikram.reddy@gmail.com",
+      "transformed_value": "vikram.reddy@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754656"
+    },
+    {
+      "source": "csv",
+      "original_value": "+917766554433",
+      "transformed_value": "+917766554433",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754658"
+    },
+    {
+      "source": "ats",
+      "original_value": "+917766554433",
+      "transformed_value": "+917766554433",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754659"
+    },
+    {
+      "source": "resume",
+      "original_value": "+917766554433",
+      "transformed_value": "+917766554433",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754661"
+    },
+    {
+      "source": "csv",
+      "original_value": "Hyderabad",
+      "transformed_value": "Hyderabad",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754663"
+    },
+    {
+      "source": "ats",
+      "original_value": "Hyderabad",
+      "transformed_value": "Hyderabad",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754664"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754666"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754667"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "Byju's",
+          "title": "Android Developer",
+          "location": "Hyderabad",
+          "start_date": "2020-10",
+          "end_date": "present",
+          "description": "Developing ed-tech Android applications."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "Byju's",
+          "title": "Android Developer",
+          "location": "Hyderabad",
+          "start_date": "2020-10",
+          "end_date": "present",
+          "description": "Developing ed-tech Android applications."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754673"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Jetpack Compose",
+        "Firebase"
+      ],
+      "transformed_value": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Jetpack Compose",
+        "Firebase",
+        "REST API"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754676"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Jetpack Compose",
+        "Firebase",
+        "REST API"
+      ],
+      "transformed_value": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Jetpack Compose",
+        "Firebase",
+        "REST API"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754678"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Jetpack Compose",
+        "Firebase",
+        "REST API"
+      ],
+      "transformed_value": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Jetpack Compose",
+        "Firebase",
+        "REST API"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754679"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/vikramreddy",
+      "transformed_value": "https://linkedin.com/in/vikramreddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754683"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/vikramreddy",
+      "transformed_value": "https://linkedin.com/in/vikramreddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754684"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/vikramreddy",
+      "transformed_value": "https://linkedin.com/in/vikramreddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754688"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://github.com/vikramreddy",
+      "transformed_value": "https://github.com/vikramreddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754690"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://github.com/vikramreddy",
+      "transformed_value": "https://github.com/vikramreddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754692"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://github.com/vikramreddy",
+      "transformed_value": "https://github.com/vikramreddy",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.754693"
+    }
+  ]
+}

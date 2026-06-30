@@ -1,0 +1,309 @@
+{
+  "candidate_id": "cluster_2",
+  "personal_info": {
+    "first_name": "Rohan",
+    "last_name": "Mehta",
+    "full_name": "Rohan Mehta",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "rohan.mehta@outlook.com",
+    "phone": "+919876001122",
+    "address": null,
+    "city": "Hyderabad",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [
+    {
+      "institution": "VIT Vellore",
+      "degree": "B.Tech",
+      "field_of_study": "Information Technology",
+      "start_date": "2014-08",
+      "end_date": "2018-05",
+      "gpa": 7.9
+    }
+  ],
+  "experience": [
+    {
+      "company": "Walmart Labs",
+      "title": "SDE-2",
+      "location": "Hyderabad",
+      "start_date": "2020-06",
+      "end_date": null,
+      "description": "Developed distributed inventory services.",
+      "is_current": true
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "Java",
+    "Spring Boot",
+    "Kafka",
+    "Microservices",
+    "GCP",
+    "Elasticsearch"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/rohanmehta",
+    "github": null,
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.7987,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 1.0
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=1.00  conflicts=2  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 2 sources agree \u2192 +0.05",
+      "2 field conflict(s) detected \u2192 -0.16"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Rohan Mehta",
+      "transformed_value": "Rohan Mehta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748280"
+    },
+    {
+      "source": "ats",
+      "original_value": "Rohan Mehta",
+      "transformed_value": "Rohan Mehta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748283"
+    },
+    {
+      "source": "resume",
+      "original_value": "Rohan Mehta",
+      "transformed_value": "Rohan Mehta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748285"
+    },
+    {
+      "source": "csv",
+      "original_value": "rohan.mehta@outlook.com",
+      "transformed_value": "rohan.mehta@outlook.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748292"
+    },
+    {
+      "source": "ats",
+      "original_value": "rohan.mehta@outlook.com",
+      "transformed_value": "rohan.mehta@outlook.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748293"
+    },
+    {
+      "source": "resume",
+      "original_value": "rohan.mehta@outlook.com",
+      "transformed_value": "rohan.mehta@outlook.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748295"
+    },
+    {
+      "source": "csv",
+      "original_value": "+919876001122",
+      "transformed_value": "+919876001122",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748297"
+    },
+    {
+      "source": "ats",
+      "original_value": "+919876001122",
+      "transformed_value": "+919876001122",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748299"
+    },
+    {
+      "source": "resume",
+      "original_value": "+919876001122",
+      "transformed_value": "+919876001122",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748303"
+    },
+    {
+      "source": "csv",
+      "original_value": "Hyderabad",
+      "transformed_value": "Hyderabad",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748305"
+    },
+    {
+      "source": "ats",
+      "original_value": "Hyderabad",
+      "transformed_value": "Hyderabad",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748306"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748308"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748309"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "institution": "VIT Vellore",
+          "degree": "B.Tech",
+          "field_of_study": "Information Technology",
+          "start_date": "2014-08",
+          "end_date": "2018-05",
+          "gpa": 7.9
+        }
+      ],
+      "transformed_value": [
+        {
+          "institution": "VIT Vellore",
+          "degree": "B.Tech",
+          "field_of_study": "Information Technology",
+          "start_date": "2014-08",
+          "end_date": "2018-05",
+          "gpa": 7.9
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748315"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "Walmart Labs",
+          "title": "SDE-2",
+          "location": "Hyderabad",
+          "start_date": "2020-06",
+          "end_date": "present",
+          "description": "Developed distributed inventory services."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "Walmart Labs",
+          "title": "SDE-2",
+          "location": "Hyderabad",
+          "start_date": "2020-06",
+          "end_date": "present",
+          "description": "Developed distributed inventory services."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748321"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "Microservices",
+        "GCP"
+      ],
+      "transformed_value": [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "Microservices",
+        "GCP",
+        "Elasticsearch"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748324"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "Microservices",
+        "GCP",
+        "Elasticsearch"
+      ],
+      "transformed_value": [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "Microservices",
+        "GCP",
+        "Elasticsearch"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748325"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "Microservices",
+        "GCP",
+        "Elasticsearch"
+      ],
+      "transformed_value": [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "Microservices",
+        "GCP",
+        "Elasticsearch"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748327"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/rohanmehta",
+      "transformed_value": "https://linkedin.com/in/rohanmehta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748331"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/rohanmehta",
+      "transformed_value": "https://linkedin.com/in/rohanmehta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748333"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/rohanmehta",
+      "transformed_value": "https://linkedin.com/in/rohanmehta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.748334"
+    }
+  ]
+}

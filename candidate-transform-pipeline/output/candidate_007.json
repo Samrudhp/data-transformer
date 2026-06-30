@@ -1,0 +1,275 @@
+{
+  "candidate_id": "cluster_6",
+  "personal_info": {
+    "first_name": "Meera",
+    "last_name": "Iyer",
+    "full_name": "Meera Iyer",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "meera.iyer@gmail.com",
+    "phone": "+916677889900",
+    "address": null,
+    "city": "Pune",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [
+    {
+      "company": "Infosys",
+      "title": "UI Developer",
+      "location": "Pune",
+      "start_date": "2019-09",
+      "end_date": null,
+      "description": "Frontend development for enterprise web applications.",
+      "is_current": true
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "React",
+    "Vue.js",
+    "JavaScript",
+    "CSS",
+    "Figma",
+    "HTML"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/meeraiyer",
+    "github": null,
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.7487,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 0.8333
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=0.83  conflicts=2  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 2 sources agree \u2192 +0.05",
+      "2 field conflict(s) detected \u2192 -0.16"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Meera Iyer",
+      "transformed_value": "Meera Iyer",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751921"
+    },
+    {
+      "source": "ats",
+      "original_value": "Meera Iyer",
+      "transformed_value": "Meera Iyer",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751923"
+    },
+    {
+      "source": "resume",
+      "original_value": "Meera Iyer",
+      "transformed_value": "Meera Iyer",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751924"
+    },
+    {
+      "source": "csv",
+      "original_value": "meera.iyer@gmail.com",
+      "transformed_value": "meera.iyer@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751930"
+    },
+    {
+      "source": "ats",
+      "original_value": "meera.iyer@gmail.com",
+      "transformed_value": "meera.iyer@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751931"
+    },
+    {
+      "source": "resume",
+      "original_value": "meera.iyer@gmail.com",
+      "transformed_value": "meera.iyer@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751933"
+    },
+    {
+      "source": "csv",
+      "original_value": "+916677889900",
+      "transformed_value": "+916677889900",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751934"
+    },
+    {
+      "source": "ats",
+      "original_value": "+916677889900",
+      "transformed_value": "+916677889900",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751936"
+    },
+    {
+      "source": "resume",
+      "original_value": "+916677889900",
+      "transformed_value": "+916677889900",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751937"
+    },
+    {
+      "source": "csv",
+      "original_value": "Pune",
+      "transformed_value": "Pune",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751939"
+    },
+    {
+      "source": "ats",
+      "original_value": "Pune",
+      "transformed_value": "Pune",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751940"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751942"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751943"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "Infosys",
+          "title": "UI Developer",
+          "location": "Pune",
+          "start_date": "2019-09",
+          "end_date": "present",
+          "description": "Frontend development for enterprise web applications."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "Infosys",
+          "title": "UI Developer",
+          "location": "Pune",
+          "start_date": "2019-09",
+          "end_date": "present",
+          "description": "Frontend development for enterprise web applications."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751949"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "React",
+        "Vue.js",
+        "JavaScript",
+        "CSS",
+        "Figma"
+      ],
+      "transformed_value": [
+        "React",
+        "Vue.js",
+        "JavaScript",
+        "CSS",
+        "Figma",
+        "HTML"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751952"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "React",
+        "Vue.js",
+        "JavaScript",
+        "CSS",
+        "Figma",
+        "HTML"
+      ],
+      "transformed_value": [
+        "React",
+        "Vue.js",
+        "JavaScript",
+        "CSS",
+        "Figma",
+        "HTML"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751953"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "React",
+        "Vue.js",
+        "JavaScript",
+        "CSS",
+        "Figma",
+        "HTML"
+      ],
+      "transformed_value": [
+        "React",
+        "Vue.js",
+        "JavaScript",
+        "CSS",
+        "Figma",
+        "HTML"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751954"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/meeraiyer",
+      "transformed_value": "https://linkedin.com/in/meeraiyer",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751959"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/meeraiyer",
+      "transformed_value": "https://linkedin.com/in/meeraiyer",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751961"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/meeraiyer",
+      "transformed_value": "https://linkedin.com/in/meeraiyer",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.751962"
+    }
+  ]
+}

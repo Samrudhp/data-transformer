@@ -1,0 +1,90 @@
+{
+  "candidate_id": "cluster_12",
+  "personal_info": {
+    "first_name": "Divya",
+    "last_name": "Krishnan",
+    "full_name": "Divya Krishnan",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "divya.krishnan@yahoo.com",
+    "phone": null,
+    "address": null,
+    "city": "Chennai, India",
+    "state": null,
+    "country": null,
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [],
+  "projects": [],
+  "skills": [
+    "Python",
+    "Scala"
+  ],
+  "links": {
+    "linkedin": null,
+    "github": "https://github.com/divyakrishnan",
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.4,
+    "confidence_scores": {
+      "github": 0.5,
+      "coverage": 0.5
+    },
+    "supporting_sources": [
+      "github"
+    ],
+    "reasons": [
+      "reliability=0.50  coverage=0.50  conflicts=0  sources=['github']",
+      "Score 0.40 is below threshold 0.50."
+    ]
+  },
+  "provenance": [
+    {
+      "source": "github",
+      "original_value": "Divya Krishnan",
+      "transformed_value": "Divya Krishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.756990"
+    },
+    {
+      "source": "github",
+      "original_value": "divya.krishnan@yahoo.com",
+      "transformed_value": "divya.krishnan@yahoo.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.756996"
+    },
+    {
+      "source": "github",
+      "original_value": "Chennai, India",
+      "transformed_value": "Chennai, India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.756998"
+    },
+    {
+      "source": "github",
+      "original_value": [
+        "Python",
+        "Scala"
+      ],
+      "transformed_value": [
+        "Python",
+        "Scala"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.757002"
+    },
+    {
+      "source": "github",
+      "original_value": "https://github.com/divyakrishnan",
+      "transformed_value": "https://github.com/divyakrishnan",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.757006"
+    }
+  ]
+}

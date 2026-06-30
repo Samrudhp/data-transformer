@@ -1,0 +1,296 @@
+{
+  "candidates": [
+    {
+      "candidateId": "ATS-001",
+      "candidateName": "Samrudh Prakash",
+      "emailAddress": "samrudh.prakash@gmail.com",
+      "mobilePhone": "+91 9900112233",
+      "currentTitle": "Senior Backend Engineer",
+      "currentCompany": "Zepto",
+      "city": "Bangalore",
+      "country": "India",
+      "skills": "Python,FastAPI,PostgreSQL,Docker,Kubernetes,Redis",
+      "linkedinUrl": "https://linkedin.com/in/samrudhp",
+      "githubUrl": "https://github.com/samrudhp",
+      "applicationDate": "2024-05-10",
+      "educationHistory": [
+        {
+          "institution": "NIT Surathkal",
+          "degree": "B.Tech",
+          "field_of_study": "Computer Science",
+          "start_date": "2016-07",
+          "end_date": "2020-06",
+          "gpa": 8.4
+        }
+      ],
+      "workHistory": [
+        {
+          "company": "Zepto",
+          "title": "Senior Backend Engineer",
+          "location": "Bengaluru",
+          "start_date": "2022-08",
+          "end_date": "present",
+          "description": "Designing high-throughput order management APIs."
+        },
+        {
+          "company": "Freshworks",
+          "title": "Software Engineer",
+          "location": "Chennai",
+          "start_date": "2020-07",
+          "end_date": "2022-07",
+          "description": "Built SaaS CRM microservices."
+        }
+      ]
+    },
+    {
+      "candidateId": "ATS-002",
+      "candidateName": "Aisha Patel",
+      "emailAddress": "aisha.patel@gmail.com",
+      "mobilePhone": "+91 9812345678",
+      "currentTitle": "Frontend Engineer",
+      "currentCompany": "Swiggy",
+      "city": "Mumbai",
+      "country": "India",
+      "skills": "React,TypeScript,Node.js,GraphQL,AWS,CSS",
+      "linkedinUrl": "https://linkedin.com/in/aishapatel",
+      "applicationDate": "2024-04-22",
+      "educationHistory": [
+        {
+          "institution": "BITS Pilani",
+          "degree": "B.E.",
+          "field_of_study": "Electronics and Computer Science",
+          "start_date": "2015-08",
+          "end_date": "2019-05",
+          "gpa": 8.1
+        }
+      ],
+      "workHistory": [
+        {
+          "company": "Swiggy",
+          "title": "Frontend Engineer",
+          "location": "Mumbai",
+          "start_date": "2021-03",
+          "end_date": "present",
+          "description": "Building consumer-facing React applications."
+        }
+      ]
+    },
+    {
+      "candidateId": "ATS-003",
+      "candidateName": "Rohan Mehta",
+      "emailAddress": "rohan.mehta@outlook.com",
+      "mobilePhone": "+91 9876001122",
+      "currentTitle": "SDE-2",
+      "currentCompany": "Walmart Labs",
+      "city": "Hyderabad",
+      "country": "India",
+      "skills": "Java,Spring Boot,Kafka,Microservices,GCP,Elasticsearch",
+      "linkedinUrl": "https://linkedin.com/in/rohanmehta",
+      "applicationDate": "2024-06-01",
+      "educationHistory": [
+        {
+          "institution": "VIT Vellore",
+          "degree": "B.Tech",
+          "field_of_study": "Information Technology",
+          "start_date": "2014-08",
+          "end_date": "2018-05",
+          "gpa": 7.9
+        }
+      ],
+      "workHistory": [
+        {
+          "company": "Walmart Labs",
+          "title": "SDE-2",
+          "location": "Hyderabad",
+          "start_date": "2020-06",
+          "end_date": "present",
+          "description": "Developed distributed inventory services."
+        }
+      ]
+    },
+    {
+      "candidateId": "ATS-004",
+      "candidateName": "Divya Krishnan",
+      "emailAddress": "divya.krishnan@yahoo.com",
+      "mobilePhone": "+91 8877665544",
+      "currentTitle": "Data Scientist",
+      "currentCompany": "Freshworks",
+      "city": "Chennai",
+      "country": "India",
+      "skills": "Machine Learning,Python,TensorFlow,PyTorch,Spark,SQL",
+      "linkedinUrl": "https://linkedin.com/in/divyakrishnan",
+      "applicationDate": "2024-03-30",
+      "educationHistory": [
+        {
+          "institution": "IIT Madras",
+          "degree": "M.Tech",
+          "field_of_study": "Data Science",
+          "start_date": "2018-07",
+          "end_date": "2020-06",
+          "gpa": 9.1
+        }
+      ],
+      "workHistory": [
+        {
+          "company": "Freshworks",
+          "title": "Data Scientist",
+          "location": "Chennai",
+          "start_date": "2020-08",
+          "end_date": "present",
+          "description": "Built ML models for customer churn prediction."
+        }
+      ]
+    },
+    {
+      "candidateId": "ATS-005",
+      "candidateName": "Arjun Nair",
+      "emailAddress": "arjun.nair@gmail.com",
+      "mobilePhone": "+91 7788996655",
+      "currentTitle": "DevOps Engineer",
+      "currentCompany": "Ola",
+      "city": "Bengaluru",
+      "country": "India",
+      "skills": "Go,Kubernetes,Terraform,AWS,CI/CD,Prometheus",
+      "linkedinUrl": "https://linkedin.com/in/arjunnair",
+      "applicationDate": "2024-05-15",
+      "workHistory": [
+        {
+          "company": "Ola",
+          "title": "DevOps Engineer",
+          "location": "Bengaluru",
+          "start_date": "2021-01",
+          "end_date": "present",
+          "description": "Managing cloud infrastructure for ride-hailing platform."
+        }
+      ]
+    },
+    {
+      "candidateId": "ATS-006",
+      "candidateName": "Priya Sharma",
+      "emailAddress": "priya.sharma@gmail.com",
+      "mobilePhone": "+91 9876543210",
+      "currentTitle": "Senior Software Engineer",
+      "currentCompany": "Flipkart",
+      "city": "Bangalore",
+      "country": "India",
+      "skills": "Python,FastAPI,PostgreSQL,Docker,Kubernetes",
+      "linkedinUrl": "https://linkedin.com/in/priyasharma",
+      "githubUrl": "https://github.com/priyasharma-dev",
+      "applicationDate": "2024-03-15",
+      "educationHistory": [
+        {
+          "institution": "IIT Bombay",
+          "degree": "B.Tech",
+          "field_of_study": "Computer Science",
+          "start_date": "2015-07",
+          "end_date": "2019-06",
+          "gpa": 8.7
+        }
+      ],
+      "workHistory": [
+        {
+          "company": "Flipkart",
+          "title": "Senior Software Engineer",
+          "location": "Bangalore",
+          "start_date": "2021-06",
+          "end_date": "present",
+          "description": "Led backend services for recommendation engine."
+        }
+      ]
+    },
+    {
+      "candidateId": "ATS-007",
+      "candidateName": "Meera Iyer",
+      "emailAddress": "meera.iyer@gmail.com",
+      "mobilePhone": "+91 6677889900",
+      "currentTitle": "UI Developer",
+      "currentCompany": "Infosys",
+      "city": "Pune",
+      "country": "India",
+      "skills": "React,Vue.js,JavaScript,CSS,Figma,HTML",
+      "linkedinUrl": "https://linkedin.com/in/meeraiyer",
+      "applicationDate": "2024-04-10",
+      "workHistory": [
+        {
+          "company": "Infosys",
+          "title": "UI Developer",
+          "location": "Pune",
+          "start_date": "2019-09",
+          "end_date": "present",
+          "description": "Frontend development for enterprise web applications."
+        }
+      ]
+    },
+    {
+      "candidateId": "ATS-008",
+      "candidateName": "Karan Joshi",
+      "emailAddress": "karan.joshi@gmail.com",
+      "mobilePhone": "+91 9988776655",
+      "currentTitle": "Full Stack Developer",
+      "currentCompany": "Paytm",
+      "city": "Delhi",
+      "country": "India",
+      "skills": "Python,Django,MySQL,Redis,Celery,React",
+      "linkedinUrl": "https://linkedin.com/in/karanjoshi",
+      "githubUrl": "https://github.com/karanjoshi",
+      "applicationDate": "2024-05-05",
+      "workHistory": [
+        {
+          "company": "Paytm",
+          "title": "Full Stack Developer",
+          "location": "Delhi",
+          "start_date": "2020-03",
+          "end_date": "present",
+          "description": "Developing payment gateway integrations."
+        }
+      ]
+    },
+    {
+      "candidateId": "ATS-009",
+      "candidateName": "Sneha Gupta",
+      "emailAddress": "sneha.gupta@gmail.com",
+      "mobilePhone": "+91 8899001122",
+      "currentTitle": "Data Engineer",
+      "currentCompany": "PhonePe",
+      "city": "Bengaluru",
+      "country": "India",
+      "skills": "Data Engineering,Spark,Hive,Airflow,Scala,Python",
+      "linkedinUrl": "https://linkedin.com/in/snehagupta",
+      "applicationDate": "2024-06-10",
+      "workHistory": [
+        {
+          "company": "PhonePe",
+          "title": "Data Engineer",
+          "location": "Bengaluru",
+          "start_date": "2021-07",
+          "end_date": "present",
+          "description": "Building data pipelines for financial analytics."
+        }
+      ]
+    },
+    {
+      "candidateId": "ATS-010",
+      "candidateName": "Vikram Reddy",
+      "emailAddress": "vikram.reddy@gmail.com",
+      "mobilePhone": "+91 7766554433",
+      "currentTitle": "Android Developer",
+      "currentCompany": "Byju's",
+      "city": "Hyderabad",
+      "country": "India",
+      "skills": "Android,Kotlin,Java,Jetpack Compose,Firebase,REST API",
+      "linkedinUrl": "https://linkedin.com/in/vikramreddy",
+      "githubUrl": "https://github.com/vikramreddy",
+      "applicationDate": "2024-04-18",
+      "workHistory": [
+        {
+          "company": "Byju's",
+          "title": "Android Developer",
+          "location": "Hyderabad",
+          "start_date": "2020-10",
+          "end_date": "present",
+          "description": "Developing ed-tech Android applications."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+full_name,email,phone,skills,city,country,current_title,current_company,linkedin,github
+Samrudh Prakash,samrudh.prakash@gmail.com,+919900112233,"Python,FastAPI,PostgreSQL,Docker,Kubernetes",Bengaluru,India,Senior Backend Engineer,Zepto,https://linkedin.com/in/samrudhp,https://github.com/samrudhp
+Aisha Patel,aisha.patel@gmail.com,+919812345678,"React,TypeScript,Node.js,GraphQL,AWS",Mumbai,India,Frontend Engineer,Swiggy,https://linkedin.com/in/aishapatel,https://github.com/aishapatel
+Rohan Mehta,rohan.mehta@outlook.com,+919876001122,"Java,Spring Boot,Kafka,Microservices,GCP",Hyderabad,India,Software Development Engineer II,Walmart Labs,https://linkedin.com/in/rohanmehta,
+Divya Krishnan,divya.krishnan@yahoo.com,+918877665544,"Machine Learning,Python,TensorFlow,PyTorch,Spark",Chennai,India,Data Scientist,Freshworks,https://linkedin.com/in/divyakrishnan,https://github.com/divyakrishnan
+Arjun Nair,arjun.nair@gmail.com,+917788996655,"Go,Kubernetes,Terraform,AWS,CI/CD",Bengaluru,India,DevOps Engineer,Ola,https://linkedin.com/in/arjunnair,
+Priya Sharma,priya.sharma@gmail.com,+919876543210,"Python,FastAPI,PostgreSQL,Docker,Kubernetes",Bengaluru,India,Senior Software Engineer,Flipkart,https://linkedin.com/in/priyasharma,https://github.com/priyasharma-dev
+Meera Iyer,meera.iyer@gmail.com,+916677889900,"React,Vue.js,JavaScript,CSS,Figma",Pune,India,UI Developer,Infosys,https://linkedin.com/in/meeraiyer,
+Karan Joshi,karan.joshi@gmail.com,+919988776655,"Python,Django,MySQL,Redis,Celery",Delhi,India,Full Stack Developer,Paytm,https://linkedin.com/in/karanjoshi,https://github.com/karanjoshi
+Sneha Gupta,sneha.gupta@gmail.com,+918899001122,"Data Engineering,Spark,Hive,Airflow,Scala",Bengaluru,India,Data Engineer,PhonePe,https://linkedin.com/in/snehagupta,
+Vikram Reddy,vikram.reddy@gmail.com,+917766554433,"Android,Kotlin,Java,Jetpack Compose,Firebase",Hyderabad,India,Android Developer,Byju's,https://linkedin.com/in/vikramreddy,https://github.com/vikramreddy

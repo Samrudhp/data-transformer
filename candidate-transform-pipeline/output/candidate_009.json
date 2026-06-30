@@ -1,0 +1,275 @@
+{
+  "candidate_id": "cluster_8",
+  "personal_info": {
+    "first_name": "Sneha",
+    "last_name": "Gupta",
+    "full_name": "Sneha Gupta",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "sneha.gupta@gmail.com",
+    "phone": "+918899001122",
+    "address": null,
+    "city": "Bengaluru",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [],
+  "experience": [
+    {
+      "company": "PhonePe",
+      "title": "Data Engineer",
+      "location": "Bengaluru",
+      "start_date": "2021-07",
+      "end_date": null,
+      "description": "Building data pipelines for financial analytics.",
+      "is_current": true
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "Data Engineering",
+    "Spark",
+    "Hive",
+    "Airflow",
+    "Scala",
+    "Python"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/snehagupta",
+    "github": null,
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.7487,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 0.8333
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=0.83  conflicts=2  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 2 sources agree \u2192 +0.05",
+      "2 field conflict(s) detected \u2192 -0.16"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Sneha Gupta",
+      "transformed_value": "Sneha Gupta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753745"
+    },
+    {
+      "source": "ats",
+      "original_value": "Sneha Gupta",
+      "transformed_value": "Sneha Gupta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753747"
+    },
+    {
+      "source": "resume",
+      "original_value": "Sneha Gupta",
+      "transformed_value": "Sneha Gupta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753748"
+    },
+    {
+      "source": "csv",
+      "original_value": "sneha.gupta@gmail.com",
+      "transformed_value": "sneha.gupta@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753754"
+    },
+    {
+      "source": "ats",
+      "original_value": "sneha.gupta@gmail.com",
+      "transformed_value": "sneha.gupta@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753755"
+    },
+    {
+      "source": "resume",
+      "original_value": "sneha.gupta@gmail.com",
+      "transformed_value": "sneha.gupta@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753756"
+    },
+    {
+      "source": "csv",
+      "original_value": "+918899001122",
+      "transformed_value": "+918899001122",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753758"
+    },
+    {
+      "source": "ats",
+      "original_value": "+918899001122",
+      "transformed_value": "+918899001122",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753760"
+    },
+    {
+      "source": "resume",
+      "original_value": "+918899001122",
+      "transformed_value": "+918899001122",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753765"
+    },
+    {
+      "source": "csv",
+      "original_value": "Bengaluru",
+      "transformed_value": "Bengaluru",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753767"
+    },
+    {
+      "source": "ats",
+      "original_value": "Bengaluru",
+      "transformed_value": "Bengaluru",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753768"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753770"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753772"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "PhonePe",
+          "title": "Data Engineer",
+          "location": "Bengaluru",
+          "start_date": "2021-07",
+          "end_date": "present",
+          "description": "Building data pipelines for financial analytics."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "PhonePe",
+          "title": "Data Engineer",
+          "location": "Bengaluru",
+          "start_date": "2021-07",
+          "end_date": "present",
+          "description": "Building data pipelines for financial analytics."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753777"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "Data Engineering",
+        "Spark",
+        "Hive",
+        "Airflow",
+        "Scala"
+      ],
+      "transformed_value": [
+        "Data Engineering",
+        "Spark",
+        "Hive",
+        "Airflow",
+        "Scala",
+        "Python"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753780"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "Data Engineering",
+        "Spark",
+        "Hive",
+        "Airflow",
+        "Scala",
+        "Python"
+      ],
+      "transformed_value": [
+        "Data Engineering",
+        "Spark",
+        "Hive",
+        "Airflow",
+        "Scala",
+        "Python"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753783"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "Data Engineering",
+        "Spark",
+        "Hive",
+        "Airflow",
+        "Scala",
+        "Python"
+      ],
+      "transformed_value": [
+        "Data Engineering",
+        "Spark",
+        "Hive",
+        "Airflow",
+        "Scala",
+        "Python"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753784"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/snehagupta",
+      "transformed_value": "https://linkedin.com/in/snehagupta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753788"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/snehagupta",
+      "transformed_value": "https://linkedin.com/in/snehagupta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753789"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/snehagupta",
+      "transformed_value": "https://linkedin.com/in/snehagupta",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.753791"
+    }
+  ]
+}

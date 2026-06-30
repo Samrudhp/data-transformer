@@ -1,0 +1,324 @@
+{
+  "candidate_id": "cluster_1",
+  "personal_info": {
+    "first_name": "Aisha",
+    "last_name": "Patel",
+    "full_name": "Aisha Patel",
+    "date_of_birth": null,
+    "gender": null,
+    "nationality": null
+  },
+  "contact": {
+    "email": "aisha.patel@gmail.com",
+    "phone": "+919812345678",
+    "address": null,
+    "city": "Mumbai",
+    "state": null,
+    "country": "India",
+    "postal_code": null
+  },
+  "education": [
+    {
+      "institution": "BITS Pilani",
+      "degree": "B.E.",
+      "field_of_study": "Electronics and Computer Science",
+      "start_date": "2015-08",
+      "end_date": "2019-05",
+      "gpa": 8.1
+    }
+  ],
+  "experience": [
+    {
+      "company": "Swiggy",
+      "title": "Frontend Engineer",
+      "location": "Mumbai",
+      "start_date": "2021-03",
+      "end_date": null,
+      "description": "Building consumer-facing React applications.",
+      "is_current": true
+    }
+  ],
+  "projects": [],
+  "skills": [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "GraphQL",
+    "AWS",
+    "CSS"
+  ],
+  "links": {
+    "linkedin": "https://linkedin.com/in/aishapatel",
+    "github": "https://github.com/aishapatel",
+    "portfolio": null,
+    "other": {}
+  },
+  "confidence": {
+    "value": 0.8062,
+    "confidence_scores": {
+      "ats": 1.0,
+      "csv": 0.65,
+      "resume": 0.85,
+      "coverage": 1.0
+    },
+    "supporting_sources": [
+      "ats",
+      "csv",
+      "resume"
+    ],
+    "reasons": [
+      "reliability=0.83  coverage=1.00  conflicts=2  sources=['ats', 'csv', 'resume']",
+      "field='city': 2 sources agree \u2192 +0.05",
+      "field='country': 2 sources agree \u2192 +0.05",
+      "field='current_company': 2 sources agree \u2192 +0.05",
+      "field='current_title': 2 sources agree \u2192 +0.05",
+      "field='email': 3 sources agree \u2192 +0.10",
+      "field='full_name': 3 sources agree \u2192 +0.10",
+      "field='github': 2 sources agree \u2192 +0.05",
+      "field='linkedin': 2 sources agree \u2192 +0.05",
+      "field='phone': 3 sources agree \u2192 +0.10",
+      "field='skills': 2 sources agree \u2192 +0.05",
+      "2 field conflict(s) detected \u2192 -0.16"
+    ]
+  },
+  "provenance": [
+    {
+      "source": "csv",
+      "original_value": "Aisha Patel",
+      "transformed_value": "Aisha Patel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747307"
+    },
+    {
+      "source": "ats",
+      "original_value": "Aisha Patel",
+      "transformed_value": "Aisha Patel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747311"
+    },
+    {
+      "source": "resume",
+      "original_value": "Aisha Patel",
+      "transformed_value": "Aisha Patel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747313"
+    },
+    {
+      "source": "csv",
+      "original_value": "aisha.patel@gmail.com",
+      "transformed_value": "aisha.patel@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747320"
+    },
+    {
+      "source": "ats",
+      "original_value": "aisha.patel@gmail.com",
+      "transformed_value": "aisha.patel@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747322"
+    },
+    {
+      "source": "resume",
+      "original_value": "aisha.patel@gmail.com",
+      "transformed_value": "aisha.patel@gmail.com",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747326"
+    },
+    {
+      "source": "csv",
+      "original_value": "+919812345678",
+      "transformed_value": "+919812345678",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747328"
+    },
+    {
+      "source": "ats",
+      "original_value": "+919812345678",
+      "transformed_value": "+919812345678",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747330"
+    },
+    {
+      "source": "resume",
+      "original_value": "+919812345678",
+      "transformed_value": "+919812345678",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747331"
+    },
+    {
+      "source": "csv",
+      "original_value": "Mumbai",
+      "transformed_value": "Mumbai",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747333"
+    },
+    {
+      "source": "ats",
+      "original_value": "Mumbai",
+      "transformed_value": "Mumbai",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747334"
+    },
+    {
+      "source": "csv",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747336"
+    },
+    {
+      "source": "ats",
+      "original_value": "India",
+      "transformed_value": "India",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747337"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "institution": "BITS Pilani",
+          "degree": "B.E.",
+          "field_of_study": "Electronics and Computer Science",
+          "start_date": "2015-08",
+          "end_date": "2019-05",
+          "gpa": 8.1
+        }
+      ],
+      "transformed_value": [
+        {
+          "institution": "BITS Pilani",
+          "degree": "B.E.",
+          "field_of_study": "Electronics and Computer Science",
+          "start_date": "2015-08",
+          "end_date": "2019-05",
+          "gpa": 8.1
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747344"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        {
+          "company": "Swiggy",
+          "title": "Frontend Engineer",
+          "location": "Mumbai",
+          "start_date": "2021-03",
+          "end_date": "present",
+          "description": "Building consumer-facing React applications."
+        }
+      ],
+      "transformed_value": [
+        {
+          "company": "Swiggy",
+          "title": "Frontend Engineer",
+          "location": "Mumbai",
+          "start_date": "2021-03",
+          "end_date": "present",
+          "description": "Building consumer-facing React applications."
+        }
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747351"
+    },
+    {
+      "source": "csv",
+      "original_value": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "GraphQL",
+        "AWS"
+      ],
+      "transformed_value": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "GraphQL",
+        "AWS",
+        "CSS"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747354"
+    },
+    {
+      "source": "ats",
+      "original_value": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "GraphQL",
+        "AWS",
+        "CSS"
+      ],
+      "transformed_value": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "GraphQL",
+        "AWS",
+        "CSS"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747356"
+    },
+    {
+      "source": "resume",
+      "original_value": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "GraphQL",
+        "AWS",
+        "CSS"
+      ],
+      "transformed_value": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "GraphQL",
+        "AWS",
+        "CSS"
+      ],
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747357"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://linkedin.com/in/aishapatel",
+      "transformed_value": "https://linkedin.com/in/aishapatel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747362"
+    },
+    {
+      "source": "ats",
+      "original_value": "https://linkedin.com/in/aishapatel",
+      "transformed_value": "https://linkedin.com/in/aishapatel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747363"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://www.linkedin.com/in/aishapatel",
+      "transformed_value": "https://linkedin.com/in/aishapatel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747365"
+    },
+    {
+      "source": "csv",
+      "original_value": "https://github.com/aishapatel",
+      "transformed_value": "https://github.com/aishapatel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747367"
+    },
+    {
+      "source": "resume",
+      "original_value": "https://github.com/aishapatel",
+      "transformed_value": "https://github.com/aishapatel",
+      "pipeline_stage": "CanonicalCandidateBuilder",
+      "timestamp": "2026-06-30 08:26:22.747368"
+    }
+  ]
+}

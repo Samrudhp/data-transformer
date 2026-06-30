@@ -3,7 +3,7 @@ CLI entrypoint for the candidate transformation pipeline.
 
 Commands
 --------
-run       — Execute the complete pipeline end-to-end.
+run       — Execute the complete pipeline end-to-end (interactive source selection).
 inspect   — Display all available canonical candidate fields.
 test      — Run all curated test cases in test_cases/.
 validate  — Validate a candidate JSON file against the output schema.
@@ -19,6 +19,7 @@ from typing import List, Optional
 import typer
 
 from src.config.config_loader import AppConfig, ConfigLoader
+from src.models.canonical_candidate import CanonicalCandidate
 from src.models.processing_context import ProcessingContext
 from src.utils.constants import PIPELINE_VERSION
 from src.utils.logger import get_logger
@@ -31,113 +32,169 @@ app = typer.Typer(
     add_completion=False,
 )
 
+# ---------------------------------------------------------------------------
+# Default input directory layout
+# ---------------------------------------------------------------------------
+
+_DEFAULT_INPUT_DIR = Path("input")
+_DEFAULT_CSV = _DEFAULT_INPUT_DIR / "recruiter.csv"
+_DEFAULT_ATS = _DEFAULT_INPUT_DIR / "ats.json"
+_DEFAULT_RESUMES = _DEFAULT_INPUT_DIR / "resumes"
+_DEFAULT_GITHUB = _DEFAULT_INPUT_DIR / "github"
+_DEFAULT_CONFIG_DIR = Path("configs")
+_DEFAULT_OUTPUT_DIR = Path("output")
+
 
 # ---------------------------------------------------------------------------
-# Helpers
+# Interactive source selection
 # ---------------------------------------------------------------------------
 
 
-def _build_pipeline_from_config(config: AppConfig):  # type: ignore[return]
+def _prompt_source_selection() -> dict:
     """
-    Instantiate and return the ordered list of pipeline Stage objects
-    based on the loaded configuration.
+    Display the Input Source Selection menu and return resolved paths.
+
+    Returns a dict with keys: csv, ats, resumes_dir, github_dir.
     """
-    from src.confidence.evidence_engine import EvidenceEngine
-    from src.identity.identity_normalizer import IdentityNormalizer
-    from src.identity.identity_resolution import IdentityResolutionService
-    from src.normalization.canonical_normalizer import CanonicalNormalizer
-    from src.pipeline.canonical_builder import CanonicalCandidateBuilder
-    from src.resolver.latest_timestamp import LatestTimestampStrategy
-    from src.resolver.majority_vote import MajorityVoteStrategy
-    from src.resolver.merge_engine import MergeEngine
-    from src.resolver.weighted_priority import WeightedPriorityStrategy
-    from src.validation.schema_validator import SchemaValidator
+    typer.echo("\n" + "=" * 41)
+    typer.echo("  Input Source Selection")
+    typer.echo("=" * 41)
+    typer.echo("  1. Use bundled demo dataset  (Recommended)")
+    typer.echo("  2. Use my own input files")
+    typer.echo("")
 
-    strategy_name = config.resolver.merge_strategy
-    priorities = config.resolver.source_priorities
+    choice = typer.prompt("  Your choice", default="1").strip()
 
-    if strategy_name == "majority_vote":
-        strategy = MajorityVoteStrategy()
-    elif strategy_name == "latest_timestamp":
-        strategy = LatestTimestampStrategy()
-    else:
-        strategy = WeightedPriorityStrategy(source_weights=priorities)
+    if choice == "2":
+        return _prompt_custom_paths()
 
-    return [
-        IdentityNormalizer(),
-        IdentityResolutionService(),
-        CanonicalNormalizer(),
-        MergeEngine(strategy=strategy),
-        EvidenceEngine(config=config.confidence),
-        CanonicalCandidateBuilder(),
-        EvidenceEngine(config=config.confidence),  # second pass after builder
-        SchemaValidator(),
-    ]
+    # Default: mode 1
+    return {
+        "csv": _DEFAULT_CSV,
+        "ats": _DEFAULT_ATS,
+        "resumes_dir": _DEFAULT_RESUMES,
+        "github_dir": _DEFAULT_GITHUB,
+    }
 
 
-def _load_fragments(sources: List[str], config_dir: Path) -> List:
+def _prompt_custom_paths() -> dict:
+    """Interactively collect and validate custom source file paths."""
+    typer.echo("")
+    typer.echo("  Please provide paths to your input files.")
+    typer.echo("  Press Enter to skip a source (at least one is required).")
+    typer.echo("")
+
+    def _ask_file(label: str, default: str = "") -> Optional[Path]:
+        raw = typer.prompt(f"  {label}", default=default).strip()
+        if not raw:
+            return None
+        p = Path(raw)
+        if not p.exists():
+            typer.echo(f"  [!] Path not found: {p} — skipping this source.")
+            return None
+        return p
+
+    def _ask_dir(label: str, default: str = "") -> Optional[Path]:
+        raw = typer.prompt(f"  {label}", default=default).strip()
+        if not raw:
+            return None
+        p = Path(raw)
+        if not p.is_dir():
+            typer.echo(f"  [!] Directory not found: {p} — skipping this source.")
+            return None
+        return p
+
+    csv_path = _ask_file("Recruiter CSV path")
+    ats_path = _ask_file("ATS JSON path")
+    resumes_dir = _ask_dir("Resume folder path (contains .pdf files)")
+    github_dir = _ask_dir("GitHub folder path (contains .json files)")
+
+    return {
+        "csv": csv_path,
+        "ats": ats_path,
+        "resumes_dir": resumes_dir,
+        "github_dir": github_dir,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Post-pipeline projection selection
+# ---------------------------------------------------------------------------
+
+
+def _prompt_projection_target(
+    candidates: List[CanonicalCandidate],
+) -> List[CanonicalCandidate]:
     """
-    Parse ``--source`` arguments and load CandidateFragments from each source.
+    Ask the user whether to project all candidates or select one.
 
-    Format: ``<type>:<path>``  e.g. ``csv:data/candidates.csv``
+    Returns the list of candidates to apply projection to.
     """
-    from src.adapters.ats_adapter import ATSAdapter
-    from src.adapters.csv_adapter import CSVAdapter
-    from src.adapters.github_adapter import GitHubAdapter
-    from src.adapters.resume_adapter import ResumeAdapter
+    count = len(candidates)
+    typer.echo("\n" + "=" * 41)
+    typer.echo("  Pipeline Complete")
+    typer.echo(f"  Generated {count} Canonical Candidate(s)")
+    typer.echo("=" * 41)
 
-    fragments = []
-    for source_spec in sources:
-        if ":" not in source_spec:
-            typer.echo(
-                f"[!] Invalid source format '{source_spec}'. "
-                "Expected <type>:<path>. Skipping.",
-                err=True,
-            )
-            continue
+    if count == 1:
+        return candidates
 
-        src_type, src_path = source_spec.split(":", 1)
-        src_type = src_type.strip().lower()
-        src_path = src_path.strip()
+    typer.echo("")
+    typer.echo("  Apply Projection To:")
+    typer.echo("  1. All Candidates")
+    typer.echo("  2. Select One Candidate")
+    typer.echo("")
+    choice = typer.prompt("  Your choice", default="1").strip()
 
-        try:
-            if src_type == "csv":
-                adapter = CSVAdapter(Path(src_path))
-                raw = adapter.load()
-                parsed = adapter.parse(raw)
-                fragments.extend(adapter.to_candidate_fragment(parsed))
+    if choice != "2":
+        return candidates
 
-            elif src_type == "ats":
-                adapter = ATSAdapter({"file_path": src_path})
-                raw = adapter.load()
-                parsed = adapter.parse(raw)
-                fragments.extend(adapter.to_candidate_fragment(parsed))
+    # Show candidate list.
+    typer.echo("")
+    for i, c in enumerate(candidates, start=1):
+        name = c.personal_info.full_name or c.candidate_id
+        typer.echo(f"  {i}. {name}")
+    typer.echo("")
 
-            elif src_type == "resume":
-                adapter = ResumeAdapter(Path(src_path))
-                raw = adapter.load()
-                parsed = adapter.parse(raw)
-                fragments.extend(adapter.to_candidate_fragment(parsed))
+    raw = typer.prompt("  Select candidate number", default="1").strip()
+    try:
+        idx = int(raw) - 1
+        if 0 <= idx < count:
+            return [candidates[idx]]
+        typer.echo("  [!] Invalid number — defaulting to all candidates.")
+    except ValueError:
+        typer.echo("  [!] Invalid input — defaulting to all candidates.")
 
-            elif src_type == "github":
-                adapter = GitHubAdapter(username=src_path)
-                raw = adapter.load()
-                parsed = adapter.parse(raw)
-                fragments.extend(adapter.to_candidate_fragment(parsed))
+    return candidates
 
-            else:
-                typer.echo(
-                    f"[!] Unknown source type '{src_type}'. "
-                    "Supported: csv, ats, resume, github.",
-                    err=True,
-                )
 
-        except FileNotFoundError as exc:
-            typer.echo(f"[!] Source not found: {exc}", err=True)
-        except ValueError as exc:
-            typer.echo(f"[!] Source error: {exc}", err=True)
+# ---------------------------------------------------------------------------
+# Output writer
+# ---------------------------------------------------------------------------
 
-    return fragments
+
+def _write_outputs(
+    projected_list: List[dict],
+    candidates: List[CanonicalCandidate],
+    output_dir: Path,
+    dry_run: bool,
+) -> None:
+    """Write projected candidate dicts to output JSON files."""
+    if dry_run:
+        typer.echo("\n  → Dry-run mode: output not written to disk.")
+        for proj in projected_list[:1]:
+            preview = json.dumps(proj, indent=2, default=str)
+            typer.echo(preview[:1200] + ("…" if len(preview) > 1200 else ""))
+        return
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    for i, (proj, cand) in enumerate(zip(projected_list, candidates), start=1):
+        filename = f"candidate_{i:03d}.json"
+        out_file = output_dir / filename
+        out_file.write_text(
+            json.dumps(proj, indent=2, default=str), encoding="utf-8"
+        )
+    typer.echo(f"\n  → {len(projected_list)} file(s) written to: {output_dir}/")
 
 
 # ---------------------------------------------------------------------------
@@ -147,138 +204,132 @@ def _load_fragments(sources: List[str], config_dir: Path) -> List:
 
 @app.command()
 def run(
-    sources: List[str] = typer.Option(
-        ...,
-        "--source",
-        "-s",
-        help=(
-            "One or more source inputs. Format: <type>:<path>. "
-            "Example: --source csv:data/candidates.csv "
-            "--source resume:resumes/cv.pdf"
-        ),
-    ),
     config_dir: Path = typer.Option(
-        Path("configs"),
+        _DEFAULT_CONFIG_DIR,
         "--config-dir",
         "-c",
         help="Directory containing pipeline.yaml, resolver.yaml, confidence.yaml.",
     ),
     output_dir: Path = typer.Option(
-        Path("output"),
+        _DEFAULT_OUTPUT_DIR,
         "--output-dir",
         "-o",
-        help="Directory where the final JSON output will be written.",
+        help="Directory where the final JSON output files will be written.",
     ),
-    dry_run: bool = typer.Option(
-        False,
+    dry_run: Optional[bool] = typer.Option(
+        None,
         "--dry-run",
+        flag_value=True,
         help="Run the pipeline without writing output to disk.",
     ),
-    no_wizard: bool = typer.Option(
-        False,
+    no_wizard: Optional[bool] = typer.Option(
+        None,
         "--no-wizard",
+        flag_value=True,
         help="Skip the interactive projection wizard (output all fields).",
     ),
 ) -> None:
     """
     Run the complete candidate transformation pipeline.
 
-    Loads source data, executes all pipeline stages, launches an interactive
-    projection wizard, validates the output, and writes the final JSON.
+    Interactively asks whether to use the bundled demo dataset or custom
+    input files. Runs identity resolution, merge, and confidence scoring
+    across all candidates. Launches the Projection Wizard.
     """
-    from src.pipeline.orchestrator import PipelineOrchestrator
     from src.projection.projection_service import ProjectionService
+    from src.runner.dataset_loader import load_dataset
+    from src.runner.multi_candidate_runner import run_multi_candidate_pipeline
 
     start_total = time.time()
-    typer.echo("\n" + "=" * 60)
-    typer.echo("  Candidate Transformation Pipeline")
-    typer.echo("=" * 60)
 
-    # 1. Load configuration.
-    typer.echo(f"\n→ Loading configuration from: {config_dir}")
+    # ── 1. Source selection ──────────────────────────────────────────────────
+    paths = _prompt_source_selection()
+
+    csv_path = paths.get("csv") or Path("/nonexistent_csv")
+    ats_path = paths.get("ats") or Path("/nonexistent_ats")
+    resumes_dir = paths.get("resumes_dir") or Path("/nonexistent_resumes")
+    github_dir = paths.get("github_dir") or Path("/nonexistent_github")
+
+    # ── 2. Load configuration ────────────────────────────────────────────────
     try:
         config = ConfigLoader(config_dir).load()
     except Exception as exc:
-        typer.echo(f"[ERROR] Failed to load config: {exc}", err=True)
+        typer.echo(f"\n  [ERROR] Failed to load config: {exc}", err=True)
         raise typer.Exit(code=1)
 
-    # 2. Load fragments from sources.
-    typer.echo(f"→ Loading sources: {sources}")
-    fragments = _load_fragments(sources, config_dir)
+    # ── 3. Load fragments ────────────────────────────────────────────────────
+    summary = load_dataset(
+        csv_path=csv_path,
+        ats_path=ats_path,
+        resumes_dir=resumes_dir,
+        github_dir=github_dir,
+    )
+    fragments = summary.fragments
+
     if not fragments:
-        typer.echo("[ERROR] No candidate fragments loaded. Aborting.", err=True)
-        raise typer.Exit(code=1)
-    typer.echo(f"  Loaded {len(fragments)} fragment(s).")
-
-    # 3. Build context.
-    context = ProcessingContext(candidate_fragments=fragments)
-
-    # 4. Build and run the pipeline.
-    typer.echo("→ Running pipeline stages...")
-    stages = _build_pipeline_from_config(config)
-    orchestrator = PipelineOrchestrator(stages=stages)
-    context = orchestrator.run(context)
-
-    if context.canonical_candidate is None:
-        typer.echo("[ERROR] Pipeline did not produce a canonical candidate.", err=True)
-        if context.errors:
-            for err in context.errors:
-                typer.echo(f"  • {err}", err=True)
+        typer.echo("\n  [ERROR] No candidate fragments loaded. Aborting.", err=True)
         raise typer.Exit(code=1)
 
-    candidate = context.canonical_candidate
-    typer.echo(f"  Pipeline complete. candidate_id={candidate.candidate_id}")
+    # ── 4. Multi-candidate pipeline run ──────────────────────────────────────
+    candidates, warnings, errors = run_multi_candidate_pipeline(fragments, config)
 
-    if context.warnings:
-        typer.echo(f"  Warnings ({len(context.warnings)}):")
-        for w in context.warnings:
-            typer.echo(f"    ⚠ {w}")
+    if not candidates:
+        typer.echo("\n  [ERROR] Pipeline produced no canonical candidates.", err=True)
+        if errors:
+            for e in errors[:5]:
+                typer.echo(f"    • {e}", err=True)
+        raise typer.Exit(code=1)
 
-    # 5. Interactive Projection Wizard (or pass-through).
-    from src.projection.wizard import run_wizard
+    if warnings:
+        typer.echo(f"\n  ⚠  {len(warnings)} warning(s) during processing.")
 
+    # ── 5. Projection target selection ───────────────────────────────────────
+    target_candidates = _prompt_projection_target(candidates)
+
+    # ── 6. Projection wizard ─────────────────────────────────────────────────
     if no_wizard:
         from src.models.projection_request import ProjectionRequest
-        request = ProjectionRequest()  # Include all fields.
+        request = ProjectionRequest()
     else:
-        typer.echo("\n→ Launching Interactive Projection Wizard...")
+        typer.echo("\n  → Launching Projection Wizard...")
+        from src.projection.wizard import run_wizard
         request = run_wizard()
 
-    # 6. Apply projection.
-    svc = ProjectionService()
-    try:
-        projected = svc.project(candidate, request)
-    except KeyError as exc:
-        typer.echo(f"[ERROR] Projection failed: {exc}", err=True)
-        raise typer.Exit(code=1)
-
-    # 7. Validate output schema.
+    # ── 7. Apply projection ──────────────────────────────────────────────────
     from src.validation.schema_validator import SchemaValidator
     from jsonschema import ValidationError
 
+    svc = ProjectionService()
     schema_validator = SchemaValidator()
-    try:
-        schema_validator.validate(projected)
-        typer.echo("  Schema validation: PASSED ✓")
-    except ValidationError as exc:
-        typer.echo(f"  Schema validation: FAILED — {exc.message}", err=True)
-        context.errors.append(str(exc.message))
+    projected_list = []
 
-    # 8. Write output.
-    output_payload = json.dumps(projected, indent=2, default=str)
+    for cand in target_candidates:
+        try:
+            projected = svc.project(cand, request)
+        except KeyError as exc:
+            typer.echo(f"  [ERROR] Projection failed for {cand.candidate_id}: {exc}", err=True)
+            continue
 
-    if not dry_run:
-        output_dir.mkdir(parents=True, exist_ok=True)
-        out_file = output_dir / f"{candidate.candidate_id}.json"
-        out_file.write_text(output_payload, encoding="utf-8")
-        typer.echo(f"\n→ Output written to: {out_file}")
-    else:
-        typer.echo("\n→ Dry-run mode: output not written to disk.")
-        typer.echo("\n" + output_payload[:1200] + ("…" if len(output_payload) > 1200 else ""))
+        # Schema validation per candidate.
+        try:
+            schema_validator.validate(projected)
+        except ValidationError as exc:
+            typer.echo(
+                f"  ⚠  Schema warning for {cand.candidate_id}: {exc.message}"
+            )
+
+        projected_list.append(projected)
+
+    if not projected_list:
+        typer.echo("\n  [ERROR] No candidates survived projection.", err=True)
+        raise typer.Exit(code=1)
+
+    # ── 8. Write outputs ─────────────────────────────────────────────────────
+    _write_outputs(projected_list, target_candidates, output_dir, dry_run)
 
     elapsed = time.time() - start_total
-    typer.echo(f"\n✓ Pipeline completed in {elapsed:.2f}s")
-    typer.echo("=" * 60 + "\n")
+    typer.echo(f"\n  ✓ Pipeline completed in {elapsed:.2f}s")
+    typer.echo("=" * 41 + "\n")
 
 
 # ---------------------------------------------------------------------------
@@ -350,7 +401,11 @@ def test(
         help="Configuration directory.",
     ),
 ) -> None:
-    """Run all curated end-to-end test cases and print PASS/FAIL results."""
+    """
+    Run all curated end-to-end test cases and print PASS/FAIL results.
+
+    Uses only the data in test_cases/ — never touches the default input/ folder.
+    """
     from src.tests.test_runner import run_all_test_cases
 
     run_all_test_cases(test_cases_dir=test_cases_dir, config_dir=config_dir)
