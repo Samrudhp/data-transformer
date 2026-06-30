@@ -129,9 +129,6 @@ def load_dataset(
             "DatasetLoader: github dir not found at %s — skipping.", github_dir
         )
 
-    if not silent:
-        _print_load_summary(csv_count, ats_count, resume_count, github_count)
-
     return DatasetSummary(
         csv_count=csv_count,
         ats_count=ats_count,

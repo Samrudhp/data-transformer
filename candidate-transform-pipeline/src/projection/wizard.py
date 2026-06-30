@@ -118,24 +118,37 @@ def _prompt_renames(selected_fields: List[str]) -> Dict[str, str]:
     return rename
 
 
+_SEP = "=" * 62
+_LINE = "─" * 62
+
+
 def _print_summary(
     selected: List[str],
     rename: Dict[str, str],
     policy: str,
 ) -> None:
     """Display the projection configuration summary."""
-    _header("Projection Summary")
-    typer.echo("\n  Included Fields:")
+    typer.echo(f"\n{_SEP}")
+    typer.echo("  Projection Summary")
+    typer.echo(_LINE)
+
+    typer.echo("\n  Included Fields")
     for field in selected:
         label = FIELD_DISPLAY_NAMES.get(field, field)
-        typer.echo(f"    ✓ {label}")
+        typer.echo(f"    ✓  {label}")
 
     if rename:
-        typer.echo("\n  Renames:")
+        typer.echo("\n  Renamed Fields")
         for src, dst in rename.items():
-            typer.echo(f"    {src}  →  {dst}")
+            src_label = FIELD_DISPLAY_NAMES.get(src, src)
+            typer.echo(f"    {src_label}")
+            typer.echo(f"      ↓")
+            typer.echo(f"    {dst}")
 
-    typer.echo(f"\n  Missing Value Policy:  {policy.upper()}")
+    typer.echo(f"\n  Missing Policy")
+    typer.echo(f"    {policy.capitalize()}")
+
+    typer.echo(f"\n{_SEP}")
 
 
 def run_wizard() -> ProjectionRequest:

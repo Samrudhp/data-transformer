@@ -2,14 +2,11 @@
 MultiCandidateRunner — runs the full pipeline over a set of fragments and
 produces one CanonicalCandidate per identity-resolved cluster.
 
-The identity resolution step first clusters all fragments globally.
-Then, for each cluster, a focused pipeline run is executed to produce
-a single merged CanonicalCandidate.
+Returns candidates, warnings, errors, and identity-resolution metadata
+so the caller (main.py) can drive all console output.
 """
 
-from typing import List, Tuple
-
-import typer
+from typing import Dict, Any, List, Tuple
 
 from src.config.config_loader import AppConfig
 from src.models.candidate_fragment import CandidateFragment
@@ -23,22 +20,23 @@ logger = get_logger(__name__)
 def run_multi_candidate_pipeline(
     fragments: List[CandidateFragment],
     config: AppConfig,
-) -> Tuple[List[CanonicalCandidate], List[str], List[str]]:
+) -> Tuple[List[CanonicalCandidate], List[str], List[str], Dict[str, Any]]:
     """
     Run the full transformation pipeline over all fragments.
 
     Strategy:
-      1. Run identity resolution on ALL fragments together to form clusters.
-      2. For each cluster, run the full pipeline (normalizer → merge →
-         evidence → builder → validator) on the cluster's fragments only.
-      3. Collect one CanonicalCandidate per cluster.
+      1. Global identity normalisation + resolution across all fragments.
+      2. Per-cluster focused pipeline (normalise → merge → evidence →
+         builder → validate).
+      3. Return one CanonicalCandidate per cluster.
 
     Args:
-        fragments: All CandidateFragment objects loaded from all sources.
+        fragments: All CandidateFragment objects from every source.
         config:    Loaded AppConfig.
 
     Returns:
-        Tuple of (candidates, all_warnings, all_errors).
+        (candidates, all_warnings, all_errors, metadata)
+        metadata keys: total_fragments, num_clusters
     """
     from src.confidence.evidence_engine import EvidenceEngine
     from src.identity.identity_normalizer import IdentityNormalizer
@@ -65,27 +63,19 @@ def run_multi_candidate_pipeline(
     all_warnings: List[str] = []
     all_errors: List[str] = []
 
-    # ── Step 1: Global identity normalization + resolution ──────────────────
-    typer.echo("\n  Running Pipeline...")
-    typer.echo("")
-
+    # ── Step 1: Global identity normalisation + resolution ───────────────────
     global_ctx = ProcessingContext(candidate_fragments=fragments)
 
-    # Normalize identities across all fragments first.
     norm = IdentityNormalizer()
     global_ctx = norm.execute(global_ctx)
 
-    # Resolve into clusters across all sources.
     resolver = IdentityResolutionService()
     global_ctx = resolver.execute(global_ctx)
 
     resolution = global_ctx.identity_resolution_result or {}
     clusters = resolution.get("clusters", [])
 
-    typer.echo("  ✓ Identity Resolution Complete")
-
     if not clusters:
-        # No clusters found — treat all as one group.
         clusters = [
             {
                 "cluster_id": "cluster_0",
@@ -95,17 +85,18 @@ def run_multi_candidate_pipeline(
             }
         ]
 
-    # ── Step 2: Per-cluster pipeline runs ───────────────────────────────────
+    total_fragments = len(global_ctx.normalized_fragments)
+    num_clusters = len(clusters)
+
+    # ── Step 2: Per-cluster pipeline runs ────────────────────────────────────
     candidates: List[CanonicalCandidate] = []
 
     for cluster in clusters:
         indices: List[int] = cluster["fragment_indices"]
         cluster_id: str = cluster["cluster_id"]
 
-        # Pick the normalized fragments that belong to this cluster.
         cluster_frags = [global_ctx.normalized_fragments[i] for i in indices]
 
-        # Build a fresh context for this cluster (already normalized).
         ctx = ProcessingContext(
             candidate_fragments=cluster_frags,
             normalized_fragments=cluster_frags,
@@ -115,7 +106,6 @@ def run_multi_candidate_pipeline(
             },
         )
 
-        # Run the per-cluster stages (skip identity steps — already done).
         per_cluster_stages = [
             CanonicalNormalizer(),
             MergeEngine(strategy=strategy),
@@ -132,7 +122,6 @@ def run_multi_candidate_pipeline(
         all_errors.extend(ctx.errors)
 
         if ctx.canonical_candidate is not None:
-            # Override the cluster ID to match the global resolution.
             cand = ctx.canonical_candidate.model_copy(
                 update={"candidate_id": cluster_id}
             )
@@ -142,9 +131,9 @@ def run_multi_candidate_pipeline(
                 "MultiCandidateRunner: cluster '%s' produced no candidate.", cluster_id
             )
 
-    typer.echo("  ✓ Normalization Complete")
-    typer.echo("  ✓ Merge Complete")
-    typer.echo("  ✓ Confidence Calculated")
-    typer.echo(f"  ✓ Generated {len(candidates)} Canonical Candidate(s)")
+    meta: Dict[str, Any] = {
+        "total_fragments": total_fragments,
+        "num_clusters": num_clusters,
+    }
 
-    return candidates, all_warnings, all_errors
+    return candidates, all_warnings, all_errors, meta

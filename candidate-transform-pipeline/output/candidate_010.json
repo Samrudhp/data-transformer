@@ -78,91 +78,91 @@
       "original_value": "Vikram Reddy",
       "transformed_value": "Vikram Reddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754644"
+      "timestamp": "2026-06-30 08:43:43.975328"
     },
     {
       "source": "ats",
       "original_value": "Vikram Reddy",
       "transformed_value": "Vikram Reddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754647"
+      "timestamp": "2026-06-30 08:43:43.975331"
     },
     {
       "source": "resume",
       "original_value": "Vikram Reddy",
       "transformed_value": "Vikram Reddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754648"
+      "timestamp": "2026-06-30 08:43:43.975332"
     },
     {
       "source": "csv",
       "original_value": "vikram.reddy@gmail.com",
       "transformed_value": "vikram.reddy@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754654"
+      "timestamp": "2026-06-30 08:43:43.975338"
     },
     {
       "source": "ats",
       "original_value": "vikram.reddy@gmail.com",
       "transformed_value": "vikram.reddy@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754655"
+      "timestamp": "2026-06-30 08:43:43.975339"
     },
     {
       "source": "resume",
       "original_value": "vikram.reddy@gmail.com",
       "transformed_value": "vikram.reddy@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754656"
+      "timestamp": "2026-06-30 08:43:43.975341"
     },
     {
       "source": "csv",
       "original_value": "+917766554433",
       "transformed_value": "+917766554433",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754658"
+      "timestamp": "2026-06-30 08:43:43.975343"
     },
     {
       "source": "ats",
       "original_value": "+917766554433",
       "transformed_value": "+917766554433",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754659"
+      "timestamp": "2026-06-30 08:43:43.975344"
     },
     {
       "source": "resume",
       "original_value": "+917766554433",
       "transformed_value": "+917766554433",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754661"
+      "timestamp": "2026-06-30 08:43:43.975346"
     },
     {
       "source": "csv",
       "original_value": "Hyderabad",
       "transformed_value": "Hyderabad",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754663"
+      "timestamp": "2026-06-30 08:43:43.975348"
     },
     {
       "source": "ats",
       "original_value": "Hyderabad",
       "transformed_value": "Hyderabad",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754664"
+      "timestamp": "2026-06-30 08:43:43.975350"
     },
     {
       "source": "csv",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754666"
+      "timestamp": "2026-06-30 08:43:43.975351"
     },
     {
       "source": "ats",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754667"
+      "timestamp": "2026-06-30 08:43:43.975353"
     },
     {
       "source": "ats",
@@ -187,7 +187,7 @@
         }
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754673"
+      "timestamp": "2026-06-30 08:43:43.975359"
     },
     {
       "source": "csv",
@@ -207,7 +207,7 @@
         "REST API"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754676"
+      "timestamp": "2026-06-30 08:43:43.975363"
     },
     {
       "source": "ats",
@@ -228,7 +228,7 @@
         "REST API"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754678"
+      "timestamp": "2026-06-30 08:43:43.975364"
     },
     {
       "source": "resume",
@@ -249,49 +249,49 @@
         "REST API"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754679"
+      "timestamp": "2026-06-30 08:43:43.975365"
     },
     {
       "source": "csv",
       "original_value": "https://linkedin.com/in/vikramreddy",
       "transformed_value": "https://linkedin.com/in/vikramreddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754683"
+      "timestamp": "2026-06-30 08:43:43.975373"
     },
     {
       "source": "ats",
       "original_value": "https://linkedin.com/in/vikramreddy",
       "transformed_value": "https://linkedin.com/in/vikramreddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754684"
+      "timestamp": "2026-06-30 08:43:43.975374"
     },
     {
       "source": "resume",
       "original_value": "https://www.linkedin.com/in/vikramreddy",
       "transformed_value": "https://linkedin.com/in/vikramreddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754688"
+      "timestamp": "2026-06-30 08:43:43.975376"
     },
     {
       "source": "csv",
       "original_value": "https://github.com/vikramreddy",
       "transformed_value": "https://github.com/vikramreddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754690"
+      "timestamp": "2026-06-30 08:43:43.975378"
     },
     {
       "source": "ats",
       "original_value": "https://github.com/vikramreddy",
       "transformed_value": "https://github.com/vikramreddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754692"
+      "timestamp": "2026-06-30 08:43:43.975379"
     },
     {
       "source": "resume",
       "original_value": "https://github.com/vikramreddy",
       "transformed_value": "https://github.com/vikramreddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.754693"
+      "timestamp": "2026-06-30 08:43:43.975380"
     }
   ]
 }

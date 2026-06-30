@@ -50,21 +50,21 @@
       "original_value": "Samrudh Prakash",
       "transformed_value": "Samrudh Prakash",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.755571"
+      "timestamp": "2026-06-30 08:43:43.976176"
     },
     {
       "source": "github",
       "original_value": "samrudh.prakash@gmail.com",
       "transformed_value": "samrudh.prakash@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.755580"
+      "timestamp": "2026-06-30 08:43:43.976183"
     },
     {
       "source": "github",
       "original_value": "Bengaluru, India",
       "transformed_value": "Bengaluru, India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.755582"
+      "timestamp": "2026-06-30 08:43:43.976185"
     },
     {
       "source": "github",
@@ -77,21 +77,21 @@
         "Go"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.755587"
+      "timestamp": "2026-06-30 08:43:43.976190"
     },
     {
       "source": "github",
       "original_value": "https://github.com/samrudhp",
       "transformed_value": "https://github.com/samrudhp",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.755592"
+      "timestamp": "2026-06-30 08:43:43.976194"
     },
     {
       "source": "github",
       "original_value": "https://samrudhp.dev",
       "transformed_value": "https://samrudhp.dev",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.755594"
+      "timestamp": "2026-06-30 08:43:43.976196"
     }
   ]
 }

@@ -1,22 +1,22 @@
-# candidate-transform-pipeline
+# Candidate Data Transformation Pipeline
 
-A production-grade candidate data transformation pipeline modelled after enterprise AI talent platforms such as Eightfold AI.
+> **Eightfold AI Assignment** — Enterprise-grade candidate data normalisation, identity resolution, and multi-source merging pipeline modelled after real-world AI talent platforms.
 
 ---
 
 ## Problem Statement
 
-Candidate data arrives from multiple, heterogeneous sources — CSV exports, ATS systems, PDF resumes, and GitHub profiles. Each source uses different field names, formats, and quality levels. Without a principled transformation layer, downstream systems receive inconsistent, duplicated, or conflicting candidate records.
+Candidate data arrives from multiple, heterogeneous sources — recruiter CSVs, ATS exports, PDF resumes, and GitHub profiles. Each source uses different field names, formats, and quality levels. Without a principled transformation layer, downstream systems receive inconsistent, duplicated, or conflicting records.
 
 This pipeline solves that by:
 
-1. **Ingesting** records from all sources via typed adapters.
-2. **Normalising** identity fields (phone, email, name) to a canonical form.
-3. **Resolving** cross-source duplicates using fuzzy matching and configurable thresholds.
-4. **Merging** conflicting field values using a pluggable strategy (weighted priority, majority vote, or latest timestamp).
-5. **Scoring** the merged record with evidence-based confidence.
-6. **Projecting** the final output at runtime — choose which fields, renames, and missing-value behaviour via an interactive wizard.
-7. **Validating** the output against a JSON Schema before writing to disk.
+1. **Ingesting** records from all sources via typed adapters
+2. **Normalising** identity fields (phone → E.164, email → lowercase, name → title case)
+3. **Resolving** cross-source duplicates using fuzzy matching and configurable thresholds
+4. **Merging** conflicting values using a pluggable strategy (weighted priority / majority vote / latest timestamp)
+5. **Scoring** the merged record with evidence-based confidence
+6. **Projecting** the final output at runtime via an interactive wizard (choose fields, renames, missing-value policy)
+7. **Validating** output against a JSON Schema before writing to disk
 
 ---
 
@@ -24,114 +24,40 @@ This pipeline solves that by:
 
 | Mode | Command | Purpose |
 |------|---------|---------|
-| **Demo / Real Dataset** | `python -m src.main run` | Processes real multi-candidate data interactively |
-| **Functional Validation** | `python -m src.main test` | Validates pipeline behaviour against curated test cases |
+| **Demo / Production** | `python -m src.main run` | Processes real multi-candidate data interactively |
+| **Functional Validation** | `python -m src.main test` | Runs all 7 curated test cases automatically |
 
-These modes are completely independent. `run` never touches `test_cases/`, and `test` never touches `input/`.
-
----
-
-## Architecture
-
-```
-Input Sources
-    ↓
-Source Adapters          (CSVAdapter | ATSAdapter | ResumeAdapter | GitHubAdapter)
-    ↓
-Candidate Fragments      (one CandidateFragment per source record)
-    ↓
-Identity Normalizer      (phone → E.164, email → lowercase, name → title case, github → URL)
-    ↓
-Identity Resolution      (blocking + RapidFuzz weighted similarity → clusters)
-    ↓
-Canonical Normalizer     (skills, companies, locations, job titles, dates → controlled vocab)
-    ↓
-Merge Policy Engine      (Strategy Pattern: WeightedPriority | MajorityVote | LatestTimestamp)
-    ↓
-Evidence Scoring Engine  (reliability × coverage − conflict penalty → Confidence score)
-    ↓
-ProcessingContext        (single mutable object carrying all state through every stage)
-    ↓
-Canonical Candidate Builder   (assembles CanonicalCandidate from merge decisions)
-    ↓
-Interactive Projection Wizard (runtime field selection, renaming, missing-value policy)
-    ↓
-Projection Service       (include_fields → apply_missing_policy → rename_fields)
-    ↓
-Output Schema Validator  (jsonschema Draft-7)
-    ↓
-Final JSON (candidate_001.json, candidate_002.json, ...)
-```
-
----
-
-## Folder Structure
-
-```
-candidate-transform-pipeline/
-├── input/                     # Default demo dataset (multi-candidate)
-│   ├── recruiter.csv          # Recruiter spreadsheet (10 candidates)
-│   ├── ats.json               # ATS export (10 candidates)
-│   ├── resumes/               # PDF resume files (10 files)
-│   │   ├── candidate1.pdf
-│   │   └── ...
-│   └── github/                # GitHub mock JSON profiles (6 profiles)
-│       ├── candidate1.json
-│       └── ...
-├── src/
-│   ├── adapters/              # CSV, ATS, Resume, GitHub adapters
-│   ├── models/                # Pydantic models (fragments, candidate, context, etc.)
-│   ├── pipeline/              # Stage ABC, Orchestrator, CanonicalCandidateBuilder
-│   ├── identity/              # IdentityNormalizer, IdentityResolutionService
-│   ├── normalization/         # CanonicalNormalizer
-│   ├── resolver/              # MergeEngine, MergeStrategy, 3 strategy implementations
-│   ├── confidence/            # EvidenceEngine
-│   ├── projection/            # ProjectionService, interactive Wizard
-│   ├── validation/            # SchemaValidator
-│   ├── config/                # ConfigLoader (pipeline.yaml, resolver.yaml, confidence.yaml)
-│   ├── runner/                # DatasetLoader, MultiCandidateRunner
-│   ├── tests/                 # Internal test runner (used by `python -m src.main test`)
-│   ├── utils/                 # logger, constants
-│   └── main.py                # Typer CLI (run, inspect, test, validate, version)
-├── configs/
-│   ├── pipeline.yaml          # Stage order
-│   ├── resolver.yaml          # Merge strategy + source priorities
-│   └── confidence.yaml        # Confidence weights
-├── test_cases/                # 7 curated end-to-end test cases (inputs/ + expected/)
-├── tests/                     # pytest unit test suite (56 tests)
-├── output/                    # Pipeline JSON output
-├── requirements.txt
-└── README.md
-```
+These modes are **completely independent**. `run` never touches `test_cases/`. `test` never touches `input/`.
 
 ---
 
 ## Quick Start
 
 ```bash
-# 1. Create and activate a virtual environment
-/Users/samrudhp/.pyenv/versions/3.10.11/bin/python -m venv venv
-source venv/bin/activate
+# 1. Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate          # macOS/Linux
+# venv\Scripts\activate           # Windows
 
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Run the pipeline (launches interactive source selection)
+# 3. Run the pipeline (interactive)
 python -m src.main run
 
-# 4. Run without the projection wizard (output all fields automatically)
+# 4. Run without the Projection Wizard (output all fields)
 python -m src.main run --no-wizard
 
-# 5. Dry run — process data but don't write files to disk
+# 5. Dry run — process data without writing files
 python -m src.main run --no-wizard --dry-run
 
 # 6. Run the 7 curated test cases
 python -m src.main test
 
-# 7. Inspect all available canonical fields
+# 7. Inspect the canonical candidate schema
 python -m src.main inspect
 
-# 8. Validate a JSON output file
+# 8. Validate an output JSON file
 python -m src.main validate output/candidate_001.json
 
 # 9. Show version
@@ -140,245 +66,370 @@ python -m src.main version
 
 ---
 
-## Mode 1 — Default Demo Dataset
+## Startup Banner
 
-When you run `python -m src.main run`, the CLI first asks how you want to provide input:
-
-```
-=========================================
-  Input Source Selection
-=========================================
-  1. Use bundled demo dataset  (Recommended)
-  2. Use my own input files
-
-  Your choice [1]:
-```
-
-Selecting **1** loads all data from the `input/` directory automatically:
+Every command displays a consistent banner:
 
 ```
-============================================
-  Loading Default Input Dataset...
-============================================
-  Recruiter CSV .............. 10 Candidates
-  ATS JSON ................... 10 Candidates
-  Resume PDFs ..................... 10 Files
-  GitHub Profiles ............... 6 Profiles
-============================================
-
-  Running Pipeline...
-
-  ✓ Identity Resolution Complete
-  ✓ Normalization Complete
-  ✓ Merge Complete
-  ✓ Confidence Calculated
-  ✓ Generated 10 Canonical Candidate(s)
+==============================================================
+            Candidate Data Transformation Pipeline
+                   Eightfold AI Assignment
+==============================================================
+  Version        : 1.0.0
+  Architecture   : Enterprise Modular ETL Pipeline
+  Sources        :
+    ✓  Recruiter CSV
+    ✓  ATS JSON
+    ✓  Resume PDF
+    ✓  GitHub Mock
+==============================================================
 ```
-
-The pipeline:
-- Automatically discovers all `.pdf` files in `input/resumes/`
-- Automatically discovers all `.json` files in `input/github/`
-- Performs **global** identity resolution across all 36+ fragments
-- Runs a focused per-cluster merge pipeline for each resolved identity
-- Generates one `candidate_NNN.json` per unique person in `output/`
 
 ---
 
-## Mode 2 — Custom Dataset
+## `python -m src.main run` — Full Pipeline Flow
 
-Selecting **2** in the source selection menu prompts you to provide your own file paths:
+### Step 1 — Dataset Selection
 
-```
-  Please provide paths to your input files.
-  Press Enter to skip a source (at least one is required).
-
-  Recruiter CSV path []:         data/my_candidates.csv
-  ATS JSON path []:              data/my_ats_export.json
-  Resume folder path []:         data/resumes/
-  GitHub folder path []:         data/github_profiles/
-```
-
-Each path is validated before the pipeline begins. Any skipped or missing source is silently excluded.
-
----
-
-## Projection Wizard
-
-After all canonical candidates are produced, the pipeline asks how you want to project the output:
+The CLI detects whether the bundled `input/` folder is present and shows what is inside:
 
 ```
-=========================================
-  Pipeline Complete
-  Generated 10 Canonical Candidate(s)
-=========================================
+==============================================================
+  Loading bundled demonstration dataset...
+──────────────────────────────────────────────────────────────
+  ✓  recruiter.csv
+  ✓  ats.json
+  ✓  Resume PDFs        (10 files)
+  ✓  GitHub Profiles    (6 profiles)
+==============================================================
 
+  Press ENTER to continue with this dataset.
+  Type  C  to use your own input files.
+
+  > 
+```
+
+- **Press ENTER** → uses the bundled `input/` folder automatically.
+- **Type `C`** → launches the custom input wizard (see below).
+
+### Step 2 — Dataset Summary
+
+After loading, dynamic counts are displayed:
+
+```
+==============================================================
+  Dataset Summary
+──────────────────────────────────────────────────────────────
+  Recruiter CSV .................................... 10 records
+  ATS JSON ......................................... 10 records
+  Resume PDFs ........................................ 10 files
+  GitHub Profiles .................................. 6 profiles
+  ──────────────────────────────────────────────────────────────
+  Total Candidate Fragments ................................ 36
+==============================================================
+```
+
+### Step 3 — Pipeline Execution
+
+```
+==============================================================
+  Running Pipeline
+==============================================================
+  ✓  Identity Resolution
+  ✓  Normalization
+  ✓  Merge Policy
+  ✓  Confidence Scoring
+  ✓  Canonical Profiles  —  10 candidate(s) generated
+```
+
+### Step 4 — Identity Resolution Summary
+
+```
+==============================================================
+  Identity Resolution Complete
+──────────────────────────────────────────────────────────────
+  Input Fragments .......................................... 36
+  Canonical Candidates ..................................... 10
+  Duplicate Fragments Merged ............................... 26
+==============================================================
+```
+
+### Step 5 — Projection Target
+
+```
   Apply Projection To:
   1. All Candidates
   2. Select One Candidate
 
-  Your choice [1]:
+  > 
 ```
 
-If you select **2**, a numbered list of candidates is shown by name so you can pick one.
+Selecting **2** shows a named candidate list for single-candidate projection.
 
-The Projection Wizard then guides you through:
+### Step 6 — Projection Wizard
+
+An interactive wizard guides field selection, renaming, and missing-value policy:
 
 ```
-────────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────
   Available Canonical Fields
-────────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────
    1. Candidate ID       (candidate_id)
    2. Personal Info      (personal_info)
    3. Contact Details    (contact)
-   4. Education          (education)
-   5. Experience         (experience)
-   6. Projects           (projects)
-   7. Skills             (skills)
-   8. Links              (links)
-   9. Confidence         (confidence)
+   ...
   10. Provenance         (provenance)
 
   Select fields to include (comma-separated numbers or names).
   Press Enter with no input to include ALL fields.
 
   Your selection: 2,3,7
+```
 
-  Would you like to rename any fields?
-  1 Yes  2 No: 1
-  Field: 7
-  New output name for 'skills': techStack
+Projection summary before confirmation:
 
-  Missing Value Policy
-  1  Omit   — field is silently excluded from output
-  2  Null   — field is included with a null value
-  3  Error  — raise an error and halt
-
-  Policy (1/2/3): 1
-
-  ────────────────────────────────────────────────────────────
+```
+==============================================================
   Projection Summary
-  ────────────────────────────────────────────────────────────
-  Included Fields:
-    ✓ Personal Info
-    ✓ Contact Details
-    ✓ Skills
-  Renames:
-    skills  →  techStack
-  Missing Value Policy:  OMIT
+──────────────────────────────────────────────────────────────
 
-  Proceed with this projection? (Y/n): Y
+  Included Fields
+    ✓  Personal Info
+    ✓  Contact Details
+    ✓  Skills
+
+  Missing Policy
+    Omit
+
+==============================================================
+  Proceed with this projection? (Y/n):
+```
+
+### Step 7 — Output Summary
+
+```
+==============================================================
+  Pipeline Completed Successfully
+──────────────────────────────────────────────────────────────
+  Canonical Candidates   10
+  Output Folder          output/
+  Files Generated
+    candidate_001.json
+    candidate_002.json
+    ...
+==============================================================
 ```
 
 ---
 
-## Input Folder Structure
+## Custom Dataset Mode
 
-The `input/` directory represents a realistic enterprise ingestion dataset. All sources contain records for the same pool of candidates:
+If you type `C` at the dataset prompt, the wizard asks for paths with retry on invalid input:
 
-| Source | File | Candidates |
-|--------|------|-----------|
-| Recruiter CSV | `input/recruiter.csv` | 10 |
-| ATS JSON | `input/ats.json` | 10 |
-| Resume PDFs | `input/resumes/*.pdf` | 10 |
-| GitHub Profiles | `input/github/*.json` | 6 |
+```
+  Custom Dataset — provide paths to your input files.
+  Press ENTER to skip a source.
 
-The identity resolution layer clusters matching records across sources so that cross-source duplicates are merged into a single canonical profile.
+  Recruiter CSV path: data/my_candidates.csv
+  ATS JSON path: data/my_ats_export.json
+  Resume folder path (contains .pdf files): data/resumes/
+  GitHub folder path (contains .json files): data/github/
+```
 
----
+If a path is invalid, the wizard re-prompts instead of skipping silently:
 
-## Pipeline Flow
-
-Each `Stage` receives the shared `ProcessingContext`, reads what it needs, and writes results back. The `PipelineOrchestrator` drives sequential execution, catches all exceptions per stage, and continues where possible.
-
-| Stage | Output written to `ProcessingContext` |
-|-------|---------------------------------------|
-| IdentityNormalizer | `normalized_fragments` |
-| IdentityResolutionService | `identity_resolution_result` |
-| CanonicalNormalizer | `normalized_fragments` (updated) |
-| MergeEngine | `merge_decisions` |
-| EvidenceEngine | `evidence`, `canonical_candidate.confidence` |
-| CanonicalCandidateBuilder | `canonical_candidate` |
-| SchemaValidator | `errors` (if validation fails) |
+```
+  [!] Not found: data/wrong.csv  — try again, or press ENTER to skip.
+  Recruiter CSV path: 
+```
 
 ---
 
-## Design Decisions
+## `python -m src.main test` — Test Runner
 
-### Adapter Pattern
-Every source implements `BaseAdapter` with three methods: `load()`, `parse()`, `to_candidate_fragment()`. Adding a new source (e.g. LinkedIn, Greenhouse) requires only a new adapter file — no other code changes.
+Runs all 7 curated test cases automatically. **No user input required.**
 
-### Strategy Pattern (Merge Policy)
-`MergeEngine` holds a `MergeStrategy` reference and delegates all field-level decisions to it. The strategy is loaded from `resolver.yaml` and can be swapped at runtime:
-- **WeightedPriority** — picks the value from the highest-trust source.
-- **MajorityVote** — picks the value most sources agree on.
-- **LatestTimestamp** — picks the most recent value.
+```
+==============================================================
+  Candidate Pipeline Test Suite
+==============================================================
 
-### Multi-Candidate Runner
-The `MultiCandidateRunner` runs identity resolution globally across all fragments, then executes a focused pipeline (normalizer → merge → evidence → builder → validator) **per resolved cluster**. This ensures each unique identity is processed independently without cross-contamination.
+  TC01 — HappyPath
+  ──────────────────────────────────────────────────────────────
+  Scenario   : Single Candidate from CSV + ATS + GitHub
+  Expected   : Pipeline merges all three sources into one canonical candidate
+  Actual     : Output produced
+  Result     : PASS  ✓
 
-### Runtime Projection Wizard
-Projection is not driven by config files. After canonical candidates are built, an interactive wizard asks the user to choose fields, optionally rename them, and set a missing-value policy. This builds a `ProjectionRequest` at runtime, keeping `CanonicalCandidate` immutable and reusable.
+  TC02 — IdentityResolution
+  ──────────────────────────────────────────────────────────────
+  Scenario   : Same candidate from CSV and ATS with different name casing
+  Expected   : Records resolved as the same identity, merged output produced
+  Actual     : Output produced
+  Result     : PASS  ✓
 
-### ProcessingContext
-A single Pydantic model is passed by reference through every stage. Stages are naturally decoupled — each reads what it needs and writes its own section. The context also carries a full decision trace (`execution_logs`, `warnings`, `errors`, provenance records).
+  ...
 
----
+==============================================================
+  Summary
+──────────────────────────────────────────────────────────────
+  Tests Executed ............................................ 7
+  Passed .................................................... 7
+  Failed .................................................... 0
+  Overall Result ......................................... PASS
+==============================================================
+```
 
-## Merge Policies
-
-Configured in `configs/resolver.yaml`:
-
-| Strategy | Description |
-|----------|-------------|
-| `weighted_priority` | Selects the value from the highest-trust source (default: ATS > Resume > CSV > GitHub) |
-| `majority_vote` | Selects the value agreed upon by the most sources |
-| `latest_timestamp` | Selects the most recently timestamped value |
-
-List fields (skills, education, experience, projects) are always **unioned** across all sources.
-
----
-
-## Test Cases
-
-The `python -m src.main test` command runs all 7 curated end-to-end test cases from `test_cases/`. It **never** uses data from `input/`.
+### Test Cases
 
 | ID | Scenario | Sources |
 |----|----------|---------|
 | TC01 | Happy Path | CSV + ATS + GitHub |
-| TC02 | Identity Resolution | CSV + ATS (same person, different name casing / phone format) |
+| TC02 | Identity Resolution | CSV + ATS (same person, different formatting) |
 | TC03 | Malformed Input | Invalid ATS JSON + valid CSV fallback |
-| TC04 | Runtime Projection | CSV only; tests ProjectionService |
+| TC04 | Runtime Projection | CSV only — validates ProjectionService |
 | TC05 | Merge Policy | CSV + ATS with conflicting job title |
 | TC06 | Missing Source | CSV only |
 | TC07 | Multi-Source Conflict | CSV + ATS + GitHub with city/title conflict |
 
-Each test case displays:
+---
+
+## `python -m src.main inspect` — Schema Reference
 
 ```
-──────────────────────────────────────────────────────────────────
-  TC01_HappyPath
-  Scenario : TC01 — Happy Path: Single Candidate from CSV + ATS + GitHub
-  Expected : Pipeline merges all three sources, produces one canonical candidate
-  Actual   : Output produced
+==============================================================
+  Canonical Candidate Schema
+==============================================================
 
-  Result   : PASS ✓
-```
+  Personal Information
+     1.  Full Name  (full_name)
+     2.  First Name  (first_name)
+     3.  Last Name  (last_name)
+     ...
 
-Expected output after running all tests:
+  Contact
+     7.  Email  (email)
+     8.  Phone  (phone)
+     ...
 
-```
-==================================================================
-  7 / 7 Tests Passed
-==================================================================
+  Professional
+    14.  Current Title  (current_title)
+    16.  Skills  (skills)
+    17.  Experience  (experience)
+    ...
+
+  Links
+    20.  LinkedIn  (linkedin)
+    21.  GitHub  (github)
+    22.  Portfolio  (portfolio)
+
+  Metadata
+    23.  Candidate ID  (candidate_id)
+    24.  Confidence Score  (confidence)
+    25.  Provenance Records  (provenance)
+==============================================================
 ```
 
 ---
 
-## Running Unit Tests
+## Architecture
 
-```bash
-python -m pytest tests/ -v
-# 56 tests, 0 failures
+```
+Input Sources
+    ↓
+Source Adapters         (CSVAdapter | ATSAdapter | ResumeAdapter | GitHubAdapter)
+    ↓
+CandidateFragment[]     (one fragment per source record)
+    ↓
+IdentityNormalizer      (phone → E.164, email → lowercase, name → title case)
+    ↓
+IdentityResolutionService  (fuzzy similarity → Union-Find clusters)
+    ↓
+CanonicalNormalizer     (skills / companies / locations / titles / dates → vocab)
+    ↓
+MergeEngine             (Strategy: WeightedPriority | MajorityVote | LatestTimestamp)
+    ↓
+EvidenceEngine          (reliability × coverage − conflict penalty → Confidence)
+    ↓
+CanonicalCandidateBuilder  (assembles typed CanonicalCandidate from merge decisions)
+    ↓
+Projection Wizard       (runtime field selection, renaming, missing-value policy)
+    ↓
+ProjectionService       (include_fields → missing_policy → rename_fields)
+    ↓
+SchemaValidator         (jsonschema Draft-7)
+    ↓
+output/candidate_NNN.json
+```
+
+**Key design patterns:**
+- **Adapter Pattern** — each source type has an isolated adapter; adding a new source requires only one new file
+- **Strategy Pattern** — merge policy is swappable via `configs/resolver.yaml` with no code changes
+- **ProcessingContext** — single shared state object passed by reference through every stage; stages are fully decoupled
+- **MultiCandidateRunner** — global identity resolution clusters all fragments, then a focused pipeline runs per cluster; no cross-contamination between candidates
+
+---
+
+## Folder Structure
+
+```
+candidate-transform-pipeline/
+├── input/                      # Bundled demo dataset (multi-candidate)
+│   ├── recruiter.csv           # 10 candidates
+│   ├── ats.json                # 10 candidates
+│   ├── resumes/                # 10 PDF resume files
+│   └── github/                 # 6 GitHub JSON profiles
+├── src/
+│   ├── adapters/               # CSV, ATS, Resume, GitHub adapters
+│   ├── confidence/             # EvidenceEngine
+│   ├── config/                 # ConfigLoader (YAML → typed config models)
+│   ├── identity/               # IdentityNormalizer, IdentityResolutionService
+│   ├── models/                 # Pydantic models (fragment, candidate, context…)
+│   ├── normalization/          # CanonicalNormalizer
+│   ├── pipeline/               # Stage ABC, Orchestrator, CanonicalCandidateBuilder
+│   ├── projection/             # ProjectionService, interactive Wizard
+│   ├── resolver/               # MergeEngine + 3 strategy implementations
+│   ├── runner/                 # DatasetLoader, MultiCandidateRunner
+│   ├── tests/                  # Internal test runner (used by `test` command)
+│   ├── utils/                  # logger, constants, cli_display
+│   ├── validation/             # SchemaValidator
+│   └── main.py                 # Typer CLI entry point
+├── configs/
+│   ├── pipeline.yaml
+│   ├── resolver.yaml
+│   └── confidence.yaml
+├── test_cases/                 # 7 curated end-to-end scenarios
+├── tests/                      # pytest unit suite (56 tests)
+├── output/                     # Pipeline JSON output
+└── requirements.txt
+```
+
+---
+
+## Configuration
+
+### `configs/resolver.yaml` — Merge Strategy
+
+```yaml
+resolver:
+  merge_strategy: weighted_priority   # weighted_priority | majority_vote | latest_timestamp
+  source_priorities:
+    ats: 1.0
+    resume: 0.8
+    csv: 0.6
+    github: 0.4
+```
+
+### `configs/confidence.yaml` — Confidence Weights
+
+```yaml
+confidence:
+  minimum_confidence_threshold: 0.5
+  source_weights:
+    ats: 0.9
+    resume: 0.75
+    csv: 0.6
+    github: 0.5
 ```
 
 ---
@@ -387,24 +438,19 @@ python -m pytest tests/ -v
 
 | Command | Description |
 |---------|-------------|
-| `python -m src.main run` | Run the full pipeline (interactive source + projection) |
-| `python -m src.main run --no-wizard` | Run and output all fields without the projection wizard |
-| `python -m src.main run --dry-run` | Process data but skip writing output to disk |
-| `python -m src.main test` | Run all 7 curated test cases |
-| `python -m src.main inspect` | Display all available canonical candidate fields |
-| `python -m src.main validate <file>` | Validate a JSON output file against the output schema |
-| `python -m src.main version` | Print the pipeline version |
+| `python -m src.main run` | Full interactive pipeline (source selection + projection wizard) |
+| `python -m src.main run --no-wizard` | Run and output all fields, no wizard |
+| `python -m src.main run --dry-run` | Process data, skip writing files |
+| `python -m src.main test` | Run all 7 curated test cases (no user input) |
+| `python -m src.main inspect` | Display canonical schema grouped by category |
+| `python -m src.main validate <file>` | Validate a JSON output file against schema |
+| `python -m src.main version` | Print pipeline version |
 
 ---
 
-## Future Extensions
+## Test Results
 
-| Area | Extension |
-|------|-----------|
-| Adapters | Add `LinkedInAdapter`, `GreenhouseAdapter`, `WorkdayAdapter` by implementing `BaseAdapter` |
-| Merge strategies | Add `ConfidenceWeightedStrategy` (uses evidence scores per field) |
-| Identity resolution | Add ML-based embeddings as a second resolution pass |
-| Output formats | Add CSV, Parquet, and JSONL output writers |
-| Observability | Add OpenTelemetry tracing per pipeline stage |
-| API mode | Wrap pipeline in a FastAPI service for batch and real-time processing |
-| Projections | Allow projection templates to be saved and reloaded |
+```
+56 / 56  unit tests passing   (pytest tests/)
+ 7 /  7  integration tests passing   (python -m src.main test)
+```

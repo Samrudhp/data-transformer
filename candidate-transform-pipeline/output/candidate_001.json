@@ -96,91 +96,91 @@
       "original_value": "Samrudh Prakash",
       "transformed_value": "Samrudh Prakash",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745178"
+      "timestamp": "2026-06-30 08:43:43.961369"
     },
     {
       "source": "ats",
       "original_value": "Samrudh Prakash",
       "transformed_value": "Samrudh Prakash",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745389"
+      "timestamp": "2026-06-30 08:43:43.961721"
     },
     {
       "source": "resume",
       "original_value": "Samrudh Prakash",
       "transformed_value": "Samrudh Prakash",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745392"
+      "timestamp": "2026-06-30 08:43:43.961724"
     },
     {
       "source": "csv",
       "original_value": "samrudh.prakash@gmail.com",
       "transformed_value": "samrudh.prakash@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745403"
+      "timestamp": "2026-06-30 08:43:43.961737"
     },
     {
       "source": "ats",
       "original_value": "samrudh.prakash@gmail.com",
       "transformed_value": "samrudh.prakash@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745405"
+      "timestamp": "2026-06-30 08:43:43.961739"
     },
     {
       "source": "resume",
       "original_value": "samrudh.prakash@gmail.com",
       "transformed_value": "samrudh.prakash@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745409"
+      "timestamp": "2026-06-30 08:43:43.961740"
     },
     {
       "source": "csv",
       "original_value": "+919900112233",
       "transformed_value": "+919900112233",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745411"
+      "timestamp": "2026-06-30 08:43:43.961743"
     },
     {
       "source": "ats",
       "original_value": "+919900112233",
       "transformed_value": "+919900112233",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745415"
+      "timestamp": "2026-06-30 08:43:43.961744"
     },
     {
       "source": "resume",
       "original_value": "+919900112233",
       "transformed_value": "+919900112233",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745417"
+      "timestamp": "2026-06-30 08:43:43.961745"
     },
     {
       "source": "csv",
       "original_value": "Bengaluru",
       "transformed_value": "Bengaluru",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745419"
+      "timestamp": "2026-06-30 08:43:43.961747"
     },
     {
       "source": "ats",
       "original_value": "Bengaluru",
       "transformed_value": "Bengaluru",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745420"
+      "timestamp": "2026-06-30 08:43:43.961748"
     },
     {
       "source": "csv",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745422"
+      "timestamp": "2026-06-30 08:43:43.961750"
     },
     {
       "source": "ats",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745423"
+      "timestamp": "2026-06-30 08:43:43.961752"
     },
     {
       "source": "ats",
@@ -205,7 +205,7 @@
         }
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745433"
+      "timestamp": "2026-06-30 08:43:43.961769"
     },
     {
       "source": "ats",
@@ -246,7 +246,7 @@
         }
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745446"
+      "timestamp": "2026-06-30 08:43:43.961784"
     },
     {
       "source": "csv",
@@ -266,7 +266,7 @@
         "Redis"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745450"
+      "timestamp": "2026-06-30 08:43:43.961788"
     },
     {
       "source": "ats",
@@ -287,7 +287,7 @@
         "Redis"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745451"
+      "timestamp": "2026-06-30 08:43:43.961789"
     },
     {
       "source": "resume",
@@ -308,49 +308,49 @@
         "Redis"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745452"
+      "timestamp": "2026-06-30 08:43:43.961791"
     },
     {
       "source": "csv",
       "original_value": "https://linkedin.com/in/samrudhp",
       "transformed_value": "https://linkedin.com/in/samrudhp",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745461"
+      "timestamp": "2026-06-30 08:43:43.961797"
     },
     {
       "source": "ats",
       "original_value": "https://linkedin.com/in/samrudhp",
       "transformed_value": "https://linkedin.com/in/samrudhp",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745462"
+      "timestamp": "2026-06-30 08:43:43.961799"
     },
     {
       "source": "resume",
       "original_value": "https://www.linkedin.com/in/samrudhp",
       "transformed_value": "https://linkedin.com/in/samrudhp",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745464"
+      "timestamp": "2026-06-30 08:43:43.961800"
     },
     {
       "source": "csv",
       "original_value": "https://github.com/samrudhp",
       "transformed_value": "https://github.com/samrudhp",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745466"
+      "timestamp": "2026-06-30 08:43:43.961802"
     },
     {
       "source": "ats",
       "original_value": "https://github.com/samrudhp",
       "transformed_value": "https://github.com/samrudhp",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745467"
+      "timestamp": "2026-06-30 08:43:43.961804"
     },
     {
       "source": "resume",
       "original_value": "https://github.com/samrudhp",
       "transformed_value": "https://github.com/samrudhp",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:26:22.745468"
+      "timestamp": "2026-06-30 08:43:43.961805"
     }
   ]
 }
