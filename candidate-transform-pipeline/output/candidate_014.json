@@ -50,21 +50,21 @@
       "original_value": "Priya Sharma",
       "transformed_value": "Priya Sharma",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.980064"
+      "timestamp": "2026-06-30 10:12:17.927346"
     },
     {
       "source": "github",
       "original_value": "priya.sharma@gmail.com",
       "transformed_value": "priya.sharma@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.980117"
+      "timestamp": "2026-06-30 10:12:17.927352"
     },
     {
       "source": "github",
       "original_value": "Bengaluru, India",
       "transformed_value": "Bengaluru, India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.980123"
+      "timestamp": "2026-06-30 10:12:17.927354"
     },
     {
       "source": "github",
@@ -77,21 +77,21 @@
         "Go"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.980128"
+      "timestamp": "2026-06-30 10:12:17.927357"
     },
     {
       "source": "github",
       "original_value": "https://github.com/priyasharma-dev",
       "transformed_value": "https://github.com/priyasharma-dev",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.980134"
+      "timestamp": "2026-06-30 10:12:17.927361"
     },
     {
       "source": "github",
       "original_value": "https://priyasharma.dev",
       "transformed_value": "https://priyasharma.dev",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.980136"
+      "timestamp": "2026-06-30 10:12:17.927363"
     }
   ]
 }

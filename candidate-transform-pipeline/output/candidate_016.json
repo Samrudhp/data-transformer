@@ -50,21 +50,21 @@
       "original_value": "Vikram Reddy",
       "transformed_value": "Vikram Reddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.982072"
+      "timestamp": "2026-06-30 10:12:17.928593"
     },
     {
       "source": "github",
       "original_value": "vikram.reddy@gmail.com",
       "transformed_value": "vikram.reddy@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.982079"
+      "timestamp": "2026-06-30 10:12:17.928600"
     },
     {
       "source": "github",
       "original_value": "Hyderabad, India",
       "transformed_value": "Hyderabad, India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.982081"
+      "timestamp": "2026-06-30 10:12:17.928602"
     },
     {
       "source": "github",
@@ -77,14 +77,14 @@
         "Java"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.982085"
+      "timestamp": "2026-06-30 10:12:17.928606"
     },
     {
       "source": "github",
       "original_value": "https://github.com/vikramreddy",
       "transformed_value": "https://github.com/vikramreddy",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.982089"
+      "timestamp": "2026-06-30 10:12:17.928610"
     }
   ]
 }

@@ -89,6 +89,7 @@ def run_multi_candidate_pipeline(
     num_clusters = len(clusters)
 
     # ── Step 2: Per-cluster pipeline runs ────────────────────────────────────
+    total_merge_decisions = 0
     candidates: List[CanonicalCandidate] = []
 
     for cluster in clusters:
@@ -109,7 +110,6 @@ def run_multi_candidate_pipeline(
         per_cluster_stages = [
             CanonicalNormalizer(),
             MergeEngine(strategy=strategy),
-            EvidenceEngine(config=config.confidence),
             CanonicalCandidateBuilder(),
             EvidenceEngine(config=config.confidence),
             SchemaValidator(),
@@ -120,6 +120,7 @@ def run_multi_candidate_pipeline(
 
         all_warnings.extend(ctx.warnings)
         all_errors.extend(ctx.errors)
+        total_merge_decisions += len(ctx.merge_decisions)
 
         if ctx.canonical_candidate is not None:
             cand = ctx.canonical_candidate.model_copy(
@@ -131,9 +132,15 @@ def run_multi_candidate_pipeline(
                 "MultiCandidateRunner: cluster '%s' produced no candidate.", cluster_id
             )
 
+    overall_confidence = 0.0
+    if candidates:
+        overall_confidence = sum(c.confidence.value for c in candidates if c.confidence) / len(candidates)
+
     meta: Dict[str, Any] = {
         "total_fragments": total_fragments,
         "num_clusters": num_clusters,
+        "merge_decisions_count": total_merge_decisions,
+        "overall_confidence": overall_confidence,
     }
 
     return candidates, all_warnings, all_errors, meta

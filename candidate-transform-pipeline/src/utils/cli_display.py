@@ -12,27 +12,24 @@ import typer
 
 from src.utils.constants import PIPELINE_VERSION
 
-_W = 62
+_W = 70
 SEP = "=" * _W
 LINE = "─" * _W
 
 
 # ── Banner ────────────────────────────────────────────────────────
 
-def banner() -> None:
+def banner(verbose: bool = False) -> None:
     """Startup banner — call once per command invocation."""
-    typer.echo(f"\n{SEP}")
+    mode = "Verbose" if verbose else "Normal"
+    typer.echo(SEP)
     typer.echo(_c("Candidate Data Transformation Pipeline"))
     typer.echo(_c("Eightfold AI Assignment"))
     typer.echo(SEP)
-    typer.echo(f"  Version        : {PIPELINE_VERSION}")
-    typer.echo(f"  Architecture   : Enterprise Modular ETL Pipeline")
-    typer.echo(f"  Sources        :")
-    typer.echo(f"    ✓  Recruiter CSV")
-    typer.echo(f"    ✓  ATS JSON")
-    typer.echo(f"    ✓  Resume PDF")
-    typer.echo(f"    ✓  GitHub Mock")
-    typer.echo(SEP + "\n")
+    typer.echo(f"Version        : {PIPELINE_VERSION}")
+    typer.echo(f"Architecture   : Enterprise Modular ETL Pipeline")
+    typer.echo(f"Execution Mode : {mode}")
+    typer.echo(SEP)
 
 
 # ── Bundled dataset preview (before loading) ──────────────────────
@@ -47,7 +44,7 @@ def bundled_dataset_preview(
     resume_n = len(list(resumes_dir.glob("*.pdf"))) if resumes_dir.exists() else 0
     github_n = len(list(github_dir.glob("*.json"))) if github_dir.exists() else 0
 
-    typer.echo(f"{SEP}")
+    typer.echo(SEP)
     typer.echo("  Loading bundled demonstration dataset...")
     typer.echo(LINE)
     _src_row("recruiter.csv",                            csv_path.exists())
@@ -96,26 +93,55 @@ def step_waiting(label: str, detail: str = "") -> None:
     typer.echo(f"  ⋯  {label}{suffix}")
 
 
-# ── Identity resolution summary ───────────────────────────────────
+# ── Pipeline statistics ───────────────────────────────────────────
 
-def ir_summary(total_fragments: int, num_clusters: int) -> None:
-    merged = max(0, total_fragments - num_clusters)
+def pipeline_statistics(
+    fragments_loaded: int,
+    canonical_candidates: int,
+    identity_clusters: int,
+    merge_decisions: int,
+    overall_confidence: float,
+    warnings: int,
+    errors: int,
+    execution_time_ms: int,
+) -> None:
+    """Display the final pipeline execution statistics."""
     typer.echo(f"\n{SEP}")
-    typer.echo("  Identity Resolution Complete")
+    typer.echo("  Pipeline Statistics")
     typer.echo(LINE)
-    typer.echo(_dot("  Input Fragments",            str(total_fragments)))
-    typer.echo(_dot("  Canonical Candidates",       str(num_clusters)))
-    typer.echo(_dot("  Duplicate Fragments Merged", str(merged)))
+    typer.echo(_dot("  Fragments Loaded",            str(fragments_loaded)))
+    typer.echo(_dot("  Canonical Candidates",       str(canonical_candidates)))
+    typer.echo(_dot("  Identity Clusters",          str(identity_clusters)))
+    typer.echo(_dot("  Merge Decisions",            str(merge_decisions)))
+    typer.echo(_dot("  Overall Confidence",         f"{overall_confidence:.2f}"))
+    typer.echo("")
+    typer.echo("  Confidence Computed From")
+    typer.echo("  ✓ Source Reliability")
+    typer.echo("  ✓ Source Agreement")
+    typer.echo("  ✓ Similarity Score")
+    typer.echo("  ✓ Conflict Penalty")
+    typer.echo("")
+    typer.echo(_dot("  Warnings",                   str(warnings)))
+    typer.echo(_dot("  Errors",                     str(errors)))
+    typer.echo(_dot("  Execution Time",             f"{execution_time_ms} ms"))
     typer.echo(SEP)
 
 
 # ── Output summary ────────────────────────────────────────────────
 
-def output_summary(count: int, output_dir: Path, filenames: List[str]) -> None:
+def output_summary(count: int, output_dir: Path, filenames: List[str], overall_confidence: float) -> None:
     typer.echo(f"\n{SEP}")
     typer.echo("  Pipeline Completed Successfully")
     typer.echo(LINE)
     typer.echo(f"  Canonical Candidates   {count}")
+    typer.echo(f"  Overall Confidence     {overall_confidence:.2f}")
+    typer.echo("")
+    typer.echo("  Confidence Computed From")
+    typer.echo("  ✓ Source Reliability")
+    typer.echo("  ✓ Source Agreement")
+    typer.echo("  ✓ Similarity Score")
+    typer.echo("  ✓ Conflict Penalty")
+    typer.echo("")
     typer.echo(f"  Output Folder          {output_dir}/")
     typer.echo("  Files Generated")
     for name in filenames[:10]:
@@ -132,36 +158,24 @@ _SCHEMA: List[tuple] = [
         ("full_name",      "Full Name"),
         ("first_name",     "First Name"),
         ("last_name",      "Last Name"),
-        ("date_of_birth",  "Date of Birth"),
-        ("gender",         "Gender"),
-        ("nationality",    "Nationality"),
     ]),
     ("Contact", [
-        ("email",       "Email"),
-        ("phone",       "Phone"),
-        ("address",     "Address"),
-        ("city",        "City"),
-        ("state",       "State"),
-        ("country",     "Country"),
-        ("postal_code", "Postal Code"),
+        ("email",       "Emails"),
+        ("phone",       "Phones"),
     ]),
     ("Professional", [
-        ("current_title",   "Current Title"),
-        ("current_company", "Current Company"),
         ("skills",          "Skills"),
         ("experience",      "Experience"),
-        ("education",       "Education"),
+        ("current_company", "Current Company"),
         ("projects",        "Projects"),
     ]),
     ("Links", [
-        ("linkedin",  "LinkedIn"),
         ("github",    "GitHub"),
         ("portfolio", "Portfolio"),
     ]),
     ("Metadata", [
-        ("candidate_id", "Candidate ID"),
-        ("confidence",   "Confidence Score"),
-        ("provenance",   "Provenance Records"),
+        ("confidence",   "Confidence"),
+        ("provenance",   "Provenance"),
     ]),
 ]
 
@@ -172,11 +186,11 @@ def inspect_schema() -> None:
     typer.echo(SEP)
     counter = 1
     for group, fields in _SCHEMA:
-        typer.echo(f"\n  {group}")
+        typer.echo(f"\n{group}")
         for key, label in fields:
-            typer.echo(f"    {counter:>2}.  {label}  ({key})")
+            typer.echo(f"{counter:>2}. {label}")
             counter += 1
-    typer.echo(f"\n{SEP}\n")
+    typer.echo(SEP + "\n")
 
 
 # ── Test runner helpers ───────────────────────────────────────────
@@ -191,38 +205,78 @@ def test_case_result(
     name: str,
     scenario: str,
     expected: str,
-    actual: str,
     passed: bool,
+    fragments_loaded: int,
+    canonical_candidates: int,
+    identity_clusters: int,
+    merge_decisions: int,
+    overall_confidence: float,
+    schema_validation: str,
+    execution_time_ms: int,
     failures: List[str],
     warnings: List[str],
     errors: List[str],
 ) -> None:
-    short = name.replace("_", " — ", 1)  # TC01_HappyPath → TC01 — HappyPath
-    status = "PASS  ✓" if passed else "FAIL  ✗"
-    typer.echo(f"\n  {short}")
-    typer.echo(f"  {LINE}")
-    typer.echo(f"  Scenario   : {scenario}")
-    typer.echo(f"  Expected   : {expected}")
-    typer.echo(f"  Actual     : {actual}")
+    short = name.replace("_", " — ", 1)
+    status = "PASS ✓" if passed else "FAIL ✗"
+    typer.echo(SEP)
+    typer.echo(f"{short}")
+    typer.echo(SEP)
+    typer.echo("Scenario")
+    typer.echo(f"{scenario}")
+    typer.echo("")
+    typer.echo("Expected Behaviour")
+    typer.echo(f"{expected}")
+    typer.echo("")
+    typer.echo("Actual Result")
+    typer.echo(f"✓ Fragments Loaded          : {fragments_loaded}")
+    typer.echo(f"✓ Canonical Candidates      : {canonical_candidates}")
+    typer.echo(f"✓ Identity Clusters         : {identity_clusters}")
+    typer.echo(f"✓ Merge Decisions           : {merge_decisions}")
+    typer.echo(f"✓ Overall Confidence        : {overall_confidence:.2f}")
+    typer.echo("  Confidence Computed From")
+    typer.echo("  ✓ Source Reliability")
+    typer.echo("  ✓ Source Agreement")
+    typer.echo("  ✓ Similarity Score")
+    typer.echo("  ✓ Conflict Penalty")
+    typer.echo(f"✓ Schema Validation         : {schema_validation}")
+    typer.echo(f"✓ Execution Time            : {execution_time_ms} ms")
     for w in warnings[:2]:
         typer.echo(f"  ⚠ Warning  : {w}")
     for e in errors[:2]:
         typer.echo(f"  ✗ Error    : {e}")
     for f in failures[:3]:
         typer.echo(f"  ✗ Mismatch : {f}")
-    typer.echo(f"  Result     : {status}")
+    typer.echo("")
+    typer.echo("Final Result")
+    typer.echo(status)
+    typer.echo("------------------------------------------------------------")
 
 
-def test_suite_summary(total: int, passed: int, failed: int) -> None:
-    overall = "PASS" if failed == 0 else "FAIL"
+def test_suite_summary(
+    total: int,
+    passed: int,
+    failed: int,
+    canonical_candidates: int,
+    avg_execution_time_ms: int,
+) -> None:
+    success_rate = int((passed / total) * 100) if total > 0 else 0
     typer.echo(f"\n{SEP}")
-    typer.echo("  Summary")
-    typer.echo(LINE)
-    typer.echo(_dot("  Tests Executed", str(total)))
-    typer.echo(_dot("  Passed",         str(passed)))
-    typer.echo(_dot("  Failed",         str(failed)))
-    typer.echo(_dot("  Overall Result", overall))
-    typer.echo(SEP + "\n")
+    typer.echo("Candidate Pipeline Test Summary")
+    typer.echo(SEP)
+    typer.echo(_dot("Tests Executed", str(total)))
+    typer.echo(_dot("Passed",         str(passed)))
+    typer.echo(_dot("Failed",         str(failed)))
+    typer.echo(_dot("Success Rate",   f"{success_rate}%"))
+    typer.echo(_dot("Canonical Candidates", str(canonical_candidates)))
+    typer.echo(_dot("Average Execution Time", f"{avg_execution_time_ms} ms"))
+    typer.echo(SEP)
+    typer.echo("Overall Result")
+    if failed == 0:
+        typer.echo("✓ ALL TESTS PASSED")
+    else:
+        typer.echo("✗ SOME TESTS FAILED")
+    typer.echo(SEP)
 
 
 # ── Internal helpers ──────────────────────────────────────────────

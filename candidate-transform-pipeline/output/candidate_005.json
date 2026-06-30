@@ -77,91 +77,91 @@
       "original_value": "Arjun Nair",
       "transformed_value": "Arjun Nair",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966997"
+      "timestamp": "2026-06-30 10:12:17.920621"
     },
     {
       "source": "ats",
       "original_value": "Arjun Nair",
       "transformed_value": "Arjun Nair",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966999"
+      "timestamp": "2026-06-30 10:12:17.920623"
     },
     {
       "source": "resume",
       "original_value": "Arjun Nair",
       "transformed_value": "Arjun Nair",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967072"
+      "timestamp": "2026-06-30 10:12:17.920625"
     },
     {
       "source": "csv",
       "original_value": "arjun.nair@gmail.com",
       "transformed_value": "arjun.nair@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967096"
+      "timestamp": "2026-06-30 10:12:17.920630"
     },
     {
       "source": "ats",
       "original_value": "arjun.nair@gmail.com",
       "transformed_value": "arjun.nair@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967098"
+      "timestamp": "2026-06-30 10:12:17.920632"
     },
     {
       "source": "resume",
       "original_value": "arjun.nair@gmail.com",
       "transformed_value": "arjun.nair@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967100"
+      "timestamp": "2026-06-30 10:12:17.920633"
     },
     {
       "source": "csv",
       "original_value": "+917788996655",
       "transformed_value": "+917788996655",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967103"
+      "timestamp": "2026-06-30 10:12:17.920635"
     },
     {
       "source": "ats",
       "original_value": "+917788996655",
       "transformed_value": "+917788996655",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967105"
+      "timestamp": "2026-06-30 10:12:17.920639"
     },
     {
       "source": "resume",
       "original_value": "+917788996655",
       "transformed_value": "+917788996655",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967107"
+      "timestamp": "2026-06-30 10:12:17.920641"
     },
     {
       "source": "csv",
       "original_value": "Bengaluru",
       "transformed_value": "Bengaluru",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967109"
+      "timestamp": "2026-06-30 10:12:17.920643"
     },
     {
       "source": "ats",
       "original_value": "Bengaluru",
       "transformed_value": "Bengaluru",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967111"
+      "timestamp": "2026-06-30 10:12:17.920644"
     },
     {
       "source": "csv",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967119"
+      "timestamp": "2026-06-30 10:12:17.920646"
     },
     {
       "source": "ats",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967124"
+      "timestamp": "2026-06-30 10:12:17.920647"
     },
     {
       "source": "ats",
@@ -186,7 +186,7 @@
         }
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967141"
+      "timestamp": "2026-06-30 10:12:17.920657"
     },
     {
       "source": "csv",
@@ -206,7 +206,7 @@
         "Prometheus"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967146"
+      "timestamp": "2026-06-30 10:12:17.920660"
     },
     {
       "source": "ats",
@@ -227,7 +227,7 @@
         "Prometheus"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967148"
+      "timestamp": "2026-06-30 10:12:17.920661"
     },
     {
       "source": "resume",
@@ -248,28 +248,28 @@
         "Prometheus"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967150"
+      "timestamp": "2026-06-30 10:12:17.920663"
     },
     {
       "source": "csv",
       "original_value": "https://linkedin.com/in/arjunnair",
       "transformed_value": "https://linkedin.com/in/arjunnair",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967161"
+      "timestamp": "2026-06-30 10:12:17.920666"
     },
     {
       "source": "ats",
       "original_value": "https://linkedin.com/in/arjunnair",
       "transformed_value": "https://linkedin.com/in/arjunnair",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967163"
+      "timestamp": "2026-06-30 10:12:17.920668"
     },
     {
       "source": "resume",
       "original_value": "https://www.linkedin.com/in/arjunnair",
       "transformed_value": "https://linkedin.com/in/arjunnair",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.967166"
+      "timestamp": "2026-06-30 10:12:17.920669"
     }
   ]
 }

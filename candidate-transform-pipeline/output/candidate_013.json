@@ -50,21 +50,21 @@
       "original_value": "Divya Krishnan",
       "transformed_value": "Divya Krishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.978125"
+      "timestamp": "2026-06-30 10:12:17.926719"
     },
     {
       "source": "github",
       "original_value": "divya.krishnan@yahoo.com",
       "transformed_value": "divya.krishnan@yahoo.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.978133"
+      "timestamp": "2026-06-30 10:12:17.926725"
     },
     {
       "source": "github",
       "original_value": "Chennai, India",
       "transformed_value": "Chennai, India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.978135"
+      "timestamp": "2026-06-30 10:12:17.926727"
     },
     {
       "source": "github",
@@ -77,14 +77,14 @@
         "Scala"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.978139"
+      "timestamp": "2026-06-30 10:12:17.926731"
     },
     {
       "source": "github",
       "original_value": "https://github.com/divyakrishnan",
       "transformed_value": "https://github.com/divyakrishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.978143"
+      "timestamp": "2026-06-30 10:12:17.926735"
     }
   ]
 }

@@ -9,6 +9,7 @@ Never asks for user input — runs all cases automatically.
 """
 
 import json
+import time
 import traceback
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -65,7 +66,7 @@ def _load_scenario_meta(case_dir: Path) -> Dict[str, str]:
 
 def _run_test_case(
     case_dir: Path, config_dir: Path
-) -> Tuple[Optional[Dict[str, Any]], List[str], List[str]]:
+) -> Tuple[Optional[Dict[str, Any]], List[str], List[str], Dict[str, Any]]:
     from src.adapters.ats_adapter import ATSAdapter
     from src.adapters.csv_adapter import CSVAdapter
     from src.adapters.github_adapter import GitHubAdapter
@@ -115,7 +116,15 @@ def _run_test_case(
             pass
 
     if not fragments:
-        return None, [], ["No fragments could be loaded from inputs/."]
+        return None, [], ["No fragments could be loaded from inputs/."], {
+            "fragments_loaded": 0,
+            "canonical_candidates": 0,
+            "identity_clusters": 0,
+            "merge_decisions": 0,
+            "overall_confidence": 0.0,
+            "schema_validation": "FAILED",
+            "execution_time_ms": 0,
+        }
 
     strategy = WeightedPriorityStrategy(source_weights=config.resolver.source_priorities)
     stages = [
@@ -123,21 +132,42 @@ def _run_test_case(
         IdentityResolutionService(),
         CanonicalNormalizer(),
         MergeEngine(strategy=strategy),
-        EvidenceEngine(config=config.confidence),
         CanonicalCandidateBuilder(),
         EvidenceEngine(config=config.confidence),
         SchemaValidator(),
     ]
 
     ctx = ProcessingContext(candidate_fragments=fragments)
+    
+    start_time = time.time()
     ctx = PipelineOrchestrator(stages=stages).run(ctx)
+    elapsed_ms = int((time.time() - start_time) * 1000)
+
+    # Determine schema validation status
+    schema_status = "PASSED"
+    for err in ctx.errors:
+        if "SchemaValidator" in err or "ValidationError" in err:
+            schema_status = "FAILED"
+            break
+    if ctx.canonical_candidate is None:
+        schema_status = "FAILED"
+
+    stats = {
+        "fragments_loaded": len(fragments),
+        "canonical_candidates": 1 if ctx.canonical_candidate is not None else 0,
+        "identity_clusters": len(ctx.identity_resolution_result.get("clusters", [])) if ctx.identity_resolution_result else 0,
+        "merge_decisions": len(ctx.merge_decisions),
+        "overall_confidence": ctx.canonical_candidate.confidence.value if (ctx.canonical_candidate and ctx.canonical_candidate.confidence) else 0.0,
+        "schema_validation": schema_status,
+        "execution_time_ms": elapsed_ms,
+    }
 
     if ctx.canonical_candidate is None:
-        return None, ctx.warnings, ctx.errors
+        return None, ctx.warnings, ctx.errors, stats
 
     svc = ProjectionService()
     output = svc.project(ctx.canonical_candidate, ProjectionRequest())
-    return output, ctx.warnings, ctx.errors
+    return output, ctx.warnings, ctx.errors, stats
 
 
 # ---------------------------------------------------------------------------
@@ -204,42 +234,66 @@ def run_all_test_cases(test_cases_dir: Path, config_dir: Path) -> None:
 
     passed_count = 0
     failed_count = 0
+    total_canonical_candidates = 0
+    total_execution_time_ms = 0
 
     for case_dir in cases:
         meta = _load_scenario_meta(case_dir)
         expected = _load_expected(case_dir)
 
         try:
-            actual, warnings, errors = _run_test_case(case_dir, config_dir)
+            actual, warnings, errors, stats = _run_test_case(case_dir, config_dir)
         except Exception as exc:
             actual, warnings, errors = None, [], [f"Exception: {exc}"]
+            stats = {
+                "fragments_loaded": 0,
+                "canonical_candidates": 0,
+                "identity_clusters": 0,
+                "merge_decisions": 0,
+                "overall_confidence": 0.0,
+                "schema_validation": "FAILED",
+                "execution_time_ms": 0,
+            }
             logger.debug(traceback.format_exc())
 
         passed, failures = _compare(actual, expected)
 
-        actual_str = "Output produced" if actual else "No output produced"
         expected_str = meta.get("expected_behaviour", "Pipeline completes.")
 
         cli_display.test_case_result(
             name=case_dir.name,
             scenario=meta.get("scenario", case_dir.name),
             expected=expected_str,
-            actual=actual_str,
             passed=passed,
+            fragments_loaded=stats["fragments_loaded"],
+            canonical_candidates=stats["canonical_candidates"],
+            identity_clusters=stats["identity_clusters"],
+            merge_decisions=stats["merge_decisions"],
+            overall_confidence=stats["overall_confidence"],
+            schema_validation=stats["schema_validation"],
+            execution_time_ms=stats["execution_time_ms"],
             failures=failures,
             warnings=warnings,
             errors=errors,
         )
+
+        total_canonical_candidates += stats["canonical_candidates"]
+        total_execution_time_ms += stats["execution_time_ms"]
 
         if passed:
             passed_count += 1
         else:
             failed_count += 1
 
+    total_tests = passed_count + failed_count
+    avg_execution_time_ms = int(total_execution_time_ms / total_tests) if total_tests > 0 else 0
+
     cli_display.test_suite_summary(
-        total=passed_count + failed_count,
+        total=total_tests,
         passed=passed_count,
         failed=failed_count,
+        canonical_candidates=total_canonical_candidates,
+        avg_execution_time_ms=avg_execution_time_ms,
     )
 
     if failed_count > 0:

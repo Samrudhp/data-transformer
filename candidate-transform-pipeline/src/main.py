@@ -21,7 +21,7 @@ from src.config.config_loader import ConfigLoader
 from src.models.canonical_candidate import CanonicalCandidate
 from src.utils import cli_display
 from src.utils.constants import PIPELINE_VERSION
-from src.utils.logger import get_logger
+from src.utils.logger import get_logger, configure_logging
 
 logger = get_logger(__name__)
 
@@ -209,6 +209,10 @@ def run(
         None, "--no-wizard", flag_value=True,
         help="Skip projection wizard and output all fields.",
     ),
+    verbose: bool = typer.Option(
+        False, "--verbose", "-v", flag_value=True,
+        help="Enable verbose logging output to console.",
+    ),
 ) -> None:
     """
     Run the complete candidate transformation pipeline.
@@ -221,10 +225,26 @@ def run(
     from src.runner.dataset_loader import load_dataset
     from src.runner.multi_candidate_runner import run_multi_candidate_pipeline
 
-    start_total = time.time()
+    if isinstance(verbose, str):
+        verbose = verbose.lower() in ("true", "1", "yes", "on")
+    verbose = bool(verbose)
+
+    configure_logging(verbose=verbose)
+
+    # Clear output directory (delete only files inside, keep the directory)
+    if output_dir.exists():
+        for item in output_dir.iterdir():
+            if item.is_file():
+                try:
+                    item.unlink()
+                except Exception as exc:
+                    logger.warning("Failed to delete old output file %s: %s", item, exc)
 
     # ── 1. Banner ────────────────────────────────────────────────────────────
-    cli_display.banner()
+    cli_display.banner(verbose=verbose)
+
+    if not verbose:
+        typer.echo("Detailed execution logs written to logs/pipeline.log\n")
 
     # ── 2. Source selection ──────────────────────────────────────────────────
     paths = _select_sources()
@@ -242,47 +262,64 @@ def run(
         raise typer.Exit(code=1)
 
     # ── 4. Load fragments ────────────────────────────────────────────────────
+    if not verbose:
+        typer.echo("Loading Sources...")
     summary = load_dataset(
         csv_path=csv_path,
         ats_path=ats_path,
         resumes_dir=resumes_dir,
         github_dir=github_dir,
     )
+    if not verbose:
+        typer.echo("✓ Completed\n")
+
     fragments = summary.fragments
 
-    cli_display.dataset_summary(
-        summary.csv_count,
-        summary.ats_count,
-        summary.resume_count,
-        summary.github_count,
-    )
+    if not verbose:
+        cli_display.dataset_summary(
+            summary.csv_count,
+            summary.ats_count,
+            summary.resume_count,
+            summary.github_count,
+        )
 
     if not fragments:
         typer.echo("\n  [ERROR] No candidate fragments loaded. Aborting.", err=True)
         raise typer.Exit(code=1)
 
     # ── 5. Pipeline ──────────────────────────────────────────────────────────
-    cli_display.pipeline_heading()
-
+    if not verbose:
+        typer.echo("Identity Resolution...")
+    
+    start_pipeline = time.time()
     candidates, warnings, errors, meta = run_multi_candidate_pipeline(
         fragments, config
     )
+    elapsed_pipeline_ms = int((time.time() - start_pipeline) * 1000)
 
-    total_frags  = meta["total_fragments"]
-    num_clusters = meta["num_clusters"]
+    if not verbose:
+        typer.echo("✓ Completed\n")
+        typer.echo("Canonical Normalization...")
+        typer.echo("✓ Completed\n")
+        typer.echo("Merge Policy Engine...")
+        typer.echo("✓ Completed\n")
+        typer.echo("Confidence & Provenance...")
+        typer.echo("✓ Completed\n")
+        typer.echo("Canonical Candidate Builder...")
+        typer.echo("✓ Completed\n")
 
-    # Step completion output
-    cli_display.step_done("Identity Resolution")
-    cli_display.step_done("Normalization")
-    cli_display.step_done("Merge Policy")
-    cli_display.step_done("Confidence Scoring")
-    cli_display.step_done(
-        "Canonical Profiles",
-        f"{len(candidates)} candidate(s) generated",
-    )
-
-    # ── 6. IR summary ────────────────────────────────────────────────────────
-    cli_display.ir_summary(total_frags, num_clusters)
+    # ── 6. IR stats & Pipeline statistics ────────────────────────────────────
+    if not verbose:
+        cli_display.pipeline_statistics(
+            fragments_loaded=meta["total_fragments"],
+            canonical_candidates=len(candidates),
+            identity_clusters=meta["num_clusters"],
+            merge_decisions=meta["merge_decisions_count"],
+            overall_confidence=meta["overall_confidence"],
+            warnings=len(warnings),
+            errors=len(errors),
+            execution_time_ms=elapsed_pipeline_ms,
+        )
 
     if not candidates:
         typer.echo("\n  [ERROR] Pipeline produced no canonical candidates.", err=True)
@@ -291,12 +328,10 @@ def run(
                 typer.echo(f"    • {e}", err=True)
         raise typer.Exit(code=1)
 
-    if warnings:
-        typer.echo(f"\n  ⚠   {len(warnings)} processing warning(s).")
-
     # ── 7. Projection target ─────────────────────────────────────────────────
-    typer.echo("")
-    cli_display.step_waiting("Projection", "select candidates to project")
+    if not verbose:
+        typer.echo("")
+        cli_display.step_waiting("Projection", "select candidates to project")
     target_candidates = _select_projection_targets(candidates)
 
     # ── 8. Projection wizard ─────────────────────────────────────────────────
@@ -312,6 +347,8 @@ def run(
     from jsonschema import ValidationError
     from src.validation.schema_validator import SchemaValidator
 
+    if not verbose:
+        typer.echo("Projection...")
     svc = ProjectionService()
     schema_validator = SchemaValidator()
     projected_list: List[dict] = []
@@ -330,6 +367,11 @@ def run(
             typer.echo(f"  ⚠  Schema warning for {cand.candidate_id}: {exc.message}")
         projected_list.append(projected)
 
+    if not verbose:
+        typer.echo("✓ Completed\n")
+        typer.echo("Schema Validation...")
+        typer.echo("✓ Completed\n")
+
     if not projected_list:
         typer.echo("\n  [ERROR] No candidates survived projection.", err=True)
         raise typer.Exit(code=1)
@@ -337,11 +379,8 @@ def run(
     # ── 10. Write output ─────────────────────────────────────────────────────
     filenames = _write_outputs(projected_list, output_dir, bool(dry_run))
 
-    elapsed = time.time() - start_total
-    cli_display.step_done("Pipeline", f"completed in {elapsed:.2f}s")
-
     if not dry_run:
-        cli_display.output_summary(len(projected_list), output_dir, filenames)
+        cli_display.output_summary(len(projected_list), output_dir, filenames, meta["overall_confidence"])
 
 
 # ---------------------------------------------------------------------------
@@ -371,6 +410,10 @@ def test(
         Path("configs"), "--config-dir",
         help="Configuration directory.",
     ),
+    verbose: bool = typer.Option(
+        False, "--verbose", "-v", flag_value=True,
+        help="Enable verbose logging output to console.",
+    ),
 ) -> None:
     """
     Run all curated end-to-end test cases and print PASS/FAIL results.
@@ -378,7 +421,14 @@ def test(
     Uses only data in test_cases/ — never touches the default input/ folder.
     Never pauses for user input.
     """
-    cli_display.banner()
+    if isinstance(verbose, str):
+        verbose = verbose.lower() in ("true", "1", "yes", "on")
+    verbose = bool(verbose)
+
+    configure_logging(verbose=verbose)
+    cli_display.banner(verbose=verbose)
+    if not verbose:
+        typer.echo("Detailed execution logs written to logs/pipeline.log\n")
     from src.tests.test_runner import run_all_test_cases
     run_all_test_cases(test_cases_dir=test_cases_dir, config_dir=config_dir)
 

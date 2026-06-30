@@ -87,91 +87,91 @@
       "original_value": "Divya Krishnan",
       "transformed_value": "Divya Krishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966010"
+      "timestamp": "2026-06-30 10:12:17.919798"
     },
     {
       "source": "ats",
       "original_value": "Divya Krishnan",
       "transformed_value": "Divya Krishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966013"
+      "timestamp": "2026-06-30 10:12:17.919800"
     },
     {
       "source": "resume",
       "original_value": "Divya Krishnan",
       "transformed_value": "Divya Krishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966015"
+      "timestamp": "2026-06-30 10:12:17.919802"
     },
     {
       "source": "csv",
       "original_value": "divya.krishnan@yahoo.com",
       "transformed_value": "divya.krishnan@yahoo.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966020"
+      "timestamp": "2026-06-30 10:12:17.919807"
     },
     {
       "source": "ats",
       "original_value": "divya.krishnan@yahoo.com",
       "transformed_value": "divya.krishnan@yahoo.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966022"
+      "timestamp": "2026-06-30 10:12:17.919809"
     },
     {
       "source": "resume",
       "original_value": "divya.krishnan@yahoo.com",
       "transformed_value": "divya.krishnan@yahoo.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966024"
+      "timestamp": "2026-06-30 10:12:17.919810"
     },
     {
       "source": "csv",
       "original_value": "+918877665544",
       "transformed_value": "+918877665544",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966026"
+      "timestamp": "2026-06-30 10:12:17.919812"
     },
     {
       "source": "ats",
       "original_value": "+918877665544",
       "transformed_value": "+918877665544",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966027"
+      "timestamp": "2026-06-30 10:12:17.919813"
     },
     {
       "source": "resume",
       "original_value": "+918877665544",
       "transformed_value": "+918877665544",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966029"
+      "timestamp": "2026-06-30 10:12:17.919815"
     },
     {
       "source": "csv",
       "original_value": "Chennai",
       "transformed_value": "Chennai",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966031"
+      "timestamp": "2026-06-30 10:12:17.919816"
     },
     {
       "source": "ats",
       "original_value": "Chennai",
       "transformed_value": "Chennai",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966032"
+      "timestamp": "2026-06-30 10:12:17.919818"
     },
     {
       "source": "csv",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966034"
+      "timestamp": "2026-06-30 10:12:17.919819"
     },
     {
       "source": "ats",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966035"
+      "timestamp": "2026-06-30 10:12:17.919821"
     },
     {
       "source": "ats",
@@ -196,7 +196,7 @@
         }
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966041"
+      "timestamp": "2026-06-30 10:12:17.919828"
     },
     {
       "source": "ats",
@@ -221,7 +221,7 @@
         }
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966048"
+      "timestamp": "2026-06-30 10:12:17.919833"
     },
     {
       "source": "csv",
@@ -241,7 +241,7 @@
         "SQL"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966051"
+      "timestamp": "2026-06-30 10:12:17.919836"
     },
     {
       "source": "ats",
@@ -262,7 +262,7 @@
         "SQL"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966052"
+      "timestamp": "2026-06-30 10:12:17.919837"
     },
     {
       "source": "resume",
@@ -283,42 +283,42 @@
         "SQL"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966054"
+      "timestamp": "2026-06-30 10:12:17.919839"
     },
     {
       "source": "csv",
       "original_value": "https://linkedin.com/in/divyakrishnan",
       "transformed_value": "https://linkedin.com/in/divyakrishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966058"
+      "timestamp": "2026-06-30 10:12:17.919842"
     },
     {
       "source": "ats",
       "original_value": "https://linkedin.com/in/divyakrishnan",
       "transformed_value": "https://linkedin.com/in/divyakrishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966060"
+      "timestamp": "2026-06-30 10:12:17.919844"
     },
     {
       "source": "resume",
       "original_value": "https://www.linkedin.com/in/divyakrishnan",
       "transformed_value": "https://linkedin.com/in/divyakrishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966061"
+      "timestamp": "2026-06-30 10:12:17.919845"
     },
     {
       "source": "csv",
       "original_value": "https://github.com/divyakrishnan",
       "transformed_value": "https://github.com/divyakrishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966063"
+      "timestamp": "2026-06-30 10:12:17.919847"
     },
     {
       "source": "resume",
       "original_value": "https://github.com/divyakrishnan",
       "transformed_value": "https://github.com/divyakrishnan",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 08:43:43.966065"
+      "timestamp": "2026-06-30 10:12:17.919848"
     }
   ]
 }
