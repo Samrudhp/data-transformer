@@ -1,0 +1,22 @@
+# pipeline.yaml
+# Defines the ordered list of pipeline stages and pipeline-level settings.
+#
+# stage_order: Controls the exact sequence in which Stage subclasses are executed
+#              by the PipelineOrchestrator. Class names must match registered stage
+#              identifiers in the orchestrator factory.
+#
+# max_errors_before_abort: If the number of stage-level errors reaches this
+#                          threshold, the orchestrator will halt early.
+
+pipeline:
+  stage_order:
+    - identity_normalizer
+    - identity_resolution
+    - canonical_normalizer
+    - merge_engine
+    - evidence_engine
+    - canonical_builder
+    - projection
+    - schema_validator
+
+  max_errors_before_abort: 5

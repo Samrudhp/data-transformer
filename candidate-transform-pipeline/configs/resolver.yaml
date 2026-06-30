@@ -1,0 +1,19 @@
+# resolver.yaml
+# Configures the merge policy engine.
+#
+# merge_strategy: The default strategy to use when merging conflicting field
+#                 values across candidate fragments.
+#                 Valid values: weighted_priority | majority_vote | latest_timestamp
+#
+# source_priorities: Numeric priority weights for each source adapter.
+#                    Higher values indicate higher trustworthiness.
+#                    Used by the WeightedPriorityStrategy.
+
+resolver:
+  merge_strategy: weighted_priority
+
+  source_priorities:
+    ats: 1.0
+    resume: 0.8
+    csv: 0.6
+    github: 0.4

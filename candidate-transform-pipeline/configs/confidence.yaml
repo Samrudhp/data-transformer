@@ -1,0 +1,30 @@
+# confidence.yaml
+# Configures the evidence scoring engine.
+#
+# source_weights: How much each source contributes to the overall confidence score.
+#                 Weights should be in the range [0.0, 1.0].
+#
+# field_weights: Relative importance of individual canonical fields when computing
+#                aggregate record-level confidence.
+#
+# minimum_confidence_threshold: Records with a final confidence score below this
+#                               value are flagged with a warning in the context.
+
+confidence:
+  source_weights:
+    ats: 1.0
+    resume: 0.85
+    csv: 0.65
+    github: 0.50
+
+  field_weights:
+    personal_info.full_name: 1.0
+    contact.email: 1.0
+    contact.phone: 0.8
+    education: 0.75
+    experience: 0.9
+    skills: 0.7
+    links.github: 0.5
+    links.linkedin: 0.5
+
+  minimum_confidence_threshold: 0.5
