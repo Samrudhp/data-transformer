@@ -1,0 +1,13 @@
+{
+  "login": "arjunmehta",
+  "name": "Arjun Mehta",
+  "email": "arjun.mehta@techmail.com",
+  "bio": "Frontend Engineer. React & TypeScript enthusiast.",
+  "location": "Mumbai, India",
+  "public_repos": 28,
+  "repositories": [
+    {"name": "next-portfolio", "language": "TypeScript", "stars": 54},
+    {"name": "react-hooks-utils", "language": "JavaScript", "stars": 31},
+    {"name": "graphql-client", "language": "TypeScript", "stars": 18}
+  ]
+}

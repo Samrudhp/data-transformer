@@ -1,0 +1,4 @@
+{
+  "scenario": "TC04 — Runtime Projection: Candidate with skills, contact, and links",
+  "expected_behaviour": "Pipeline produces canonical candidate. ProjectionService can selectively include fields and apply renames. CanonicalCandidate remains unmodified."
+}

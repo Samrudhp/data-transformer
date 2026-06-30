@@ -1,0 +1,25 @@
+{
+  "candidates": [
+    {
+      "candidateId": "ATS-707",
+      "candidateName": "Arjun Mehta",
+      "emailAddress": "arjun.mehta@techmail.com",
+      "mobilePhone": "09001234567",
+      "currentTitle": "Senior Frontend Engineer",
+      "currentCompany": "Zomato",
+      "city": "Bombay",
+      "country": "India",
+      "skills": "React,TypeScript,Next.js,GraphQL,Storybook",
+      "githubUrl": "https://github.com/arjunmehta",
+      "educationHistory": [
+        {
+          "institution": "BITS Pilani",
+          "degree": "B.E.",
+          "field_of_study": "Computer Science",
+          "start_date": "2016",
+          "end_date": "2020"
+        }
+      ]
+    }
+  ]
+}

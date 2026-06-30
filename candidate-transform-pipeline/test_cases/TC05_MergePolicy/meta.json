@@ -1,0 +1,4 @@
+{
+  "scenario": "TC05 — Merge Policy: Conflicting job title between CSV and ATS",
+  "expected_behaviour": "WeightedPriorityStrategy selects the ATS value for current_title because ATS has higher source weight (1.0 vs 0.6). Skills are unioned from both sources."
+}

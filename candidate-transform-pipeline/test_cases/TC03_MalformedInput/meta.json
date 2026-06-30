@@ -1,0 +1,4 @@
+{
+  "scenario": "TC03 — Malformed Input: ATS JSON is invalid; valid CSV fallback present",
+  "expected_behaviour": "Pipeline gracefully skips the malformed ATS file, logs a warning, and produces a canonical candidate from the valid CSV source."
+}

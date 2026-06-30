@@ -1,0 +1,4 @@
+{
+  "scenario": "TC06 — Missing Source: Only CSV present; no ATS, no resume, no GitHub",
+  "expected_behaviour": "Pipeline completes successfully with a single CSV source. No warnings about missing sources. Canonical candidate has basic fields populated."
+}

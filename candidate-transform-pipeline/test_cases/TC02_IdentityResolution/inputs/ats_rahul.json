@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "candidateId": "ATS-202",
+      "candidateName": "RAHUL VERMA",
+      "emailAddress": "rahul.verma@outlook.com",
+      "mobilePhone": "09988776655",
+      "currentTitle": "Java Developer",
+      "currentCompany": "TCS",
+      "city": "New Delhi",
+      "country": "India",
+      "skills": "Java,Spring Boot,Hibernate,MySQL,AWS",
+      "educationHistory": [
+        {
+          "institution": "Delhi University",
+          "degree": "B.Sc",
+          "field_of_study": "Computer Science",
+          "start_date": "2013",
+          "end_date": "2016"
+        }
+      ]
+    }
+  ]
+}

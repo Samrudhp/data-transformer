@@ -1,0 +1,4 @@
+{
+  "scenario": "TC07 — Multi-Source Conflict: CSV, ATS, and GitHub with conflicting city (Mumbai vs Bombay) and title (Frontend Developer vs Senior Frontend Engineer)",
+  "expected_behaviour": "Pipeline resolves conflicts: ATS wins city (normalised to Mumbai) and title. Skills are unioned from all three sources. GitHub enriches links and adds TypeScript/JavaScript skills."
+}

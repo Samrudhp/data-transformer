@@ -1,0 +1,45 @@
+{
+  "candidates": [
+    {
+      "candidateId": "ATS-001",
+      "candidateName": "Priya Sharma",
+      "emailAddress": "priya.sharma@gmail.com",
+      "mobilePhone": "+91 9876543210",
+      "currentTitle": "Senior Software Engineer",
+      "currentCompany": "Flipkart",
+      "city": "Bangalore",
+      "country": "India",
+      "skills": "Python,FastAPI,PostgreSQL,Docker,Kubernetes",
+      "linkedinUrl": "https://www.linkedin.com/in/priyasharma",
+      "applicationDate": "2024-03-15",
+      "educationHistory": [
+        {
+          "institution": "IIT Bombay",
+          "degree": "B.Tech",
+          "field_of_study": "Computer Science",
+          "start_date": "2015-07",
+          "end_date": "2019-06",
+          "gpa": 8.7
+        }
+      ],
+      "workHistory": [
+        {
+          "company": "Flipkart",
+          "title": "Senior Software Engineer",
+          "location": "Bangalore",
+          "start_date": "2021-06",
+          "end_date": "present",
+          "description": "Led backend services for recommendation engine."
+        },
+        {
+          "company": "Infosys",
+          "title": "Software Engineer",
+          "location": "Pune",
+          "start_date": "2019-07",
+          "end_date": "2021-05",
+          "description": "Developed REST APIs for banking domain."
+        }
+      ]
+    }
+  ]
+}

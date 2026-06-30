@@ -1,0 +1,15 @@
+{
+  "candidates": [
+    {
+      "candidateId": "ATS-505",
+      "candidateName": "Vikram Singh",
+      "emailAddress": "vikram.singh@corp.com",
+      "mobilePhone": "+91 9123456780",
+      "currentTitle": "Principal Software Engineer",
+      "currentCompany": "Google India",
+      "city": "Bangalore",
+      "country": "India",
+      "skills": "Python,Go,Kubernetes,gRPC,Terraform"
+    }
+  ]
+}

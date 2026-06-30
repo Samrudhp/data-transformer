@@ -1,0 +1,4 @@
+{
+  "scenario": "TC02 — Identity Resolution: Same candidate from CSV and ATS with name casing and phone format differences",
+  "expected_behaviour": "IdentityResolutionService resolves CSV and ATS records as the same candidate. Merged output has a single canonical entry with all skills from both sources."
+}

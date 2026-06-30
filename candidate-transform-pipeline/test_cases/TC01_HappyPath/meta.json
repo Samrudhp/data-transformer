@@ -1,0 +1,4 @@
+{
+  "scenario": "TC01 — Happy Path: Single Candidate from CSV + ATS + GitHub",
+  "expected_behaviour": "Pipeline merges all three sources into one canonical candidate with skills, education, experience, and links populated."
+}
