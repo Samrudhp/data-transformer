@@ -30,98 +30,13 @@ Each source is independently ingested, transformed into a common intermediate re
 
 ## High-Level Architecture
 
-```mermaid
-flowchart LR
-
-A["Recruiter CSV"]
-B["ATS JSON"]
-C["Resume PDFs"]
-D["GitHub Profiles"]
-
-A --> E
-B --> E
-C --> E
-D --> E
-
-E["Source Adapters"]
-
-E --> F["Identity Resolution"]
-
-F --> G["Normalization"]
-
-G --> H["Merge & Confidence"]
-
-H --> I["Canonical Candidate"]
-
-I --> J["Projection Wizard"]
-
-J --> K["Validated JSON Output"]
-```
+![High Level Architecture](image-1.png)
 
 ---
 
 ## Internal Pipeline
 
-```mermaid
-flowchart TD
-
-A["📥 Input Sources
-CSV • ATS • Resume • GitHub"]
-
---> B["🔌 Source Adapters
-• Parse source-specific formats
-• Convert to Candidate Fragments"]
-
---> C["📄 Candidate Fragments
-• Common intermediate model
-• Preserve source metadata"]
-
---> D["🧹 Identity Normalizer
-• Normalize names
-• Emails
-• Phones
-• GitHub URLs"]
-
---> E["🆔 Identity Resolution
-• Blocking
-• Fuzzy Matching
-• Duplicate Detection"]
-
---> F["⚙️ Canonical Normalizer
-• Skills
-• Companies
-• Locations
-• Dates"]
-
---> G["🔀 Merge Policy Engine
-• Weighted Priority
-• Majority Vote
-• Latest Timestamp"]
-
---> H["📊 Confidence & Provenance
-• Confidence Score
-• Supporting Sources
-• Decision Trace"]
-
---> I["👤 Canonical Candidate Builder
-• Unified Candidate Profile"]
-
---> J["🎯 Runtime Projection Wizard
-• Select Fields
-• Rename Fields
-• Missing Value Policy"]
-
---> K["📤 Projection Service
-• Generate Requested Output
-• Preserve Canonical Model"]
-
---> L["✅ Schema Validator
-• Required Fields
-• Type Validation
-• JSON Validation"]
-
---> M["📦 Validated JSON Output"]
-```
+![Internal Architecture](image.png)
 
 ---
 

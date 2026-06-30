@@ -50,21 +50,21 @@
       "original_value": "Aisha Patel",
       "transformed_value": "Aisha Patel",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.926080"
+      "timestamp": "2026-06-30 10:51:33.576105"
     },
     {
       "source": "github",
       "original_value": "aisha.patel@gmail.com",
       "transformed_value": "aisha.patel@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.926086"
+      "timestamp": "2026-06-30 10:51:33.576112"
     },
     {
       "source": "github",
       "original_value": "Mumbai, India",
       "transformed_value": "Mumbai, India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.926088"
+      "timestamp": "2026-06-30 10:51:33.576114"
     },
     {
       "source": "github",
@@ -77,21 +77,21 @@
         "JavaScript"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.926092"
+      "timestamp": "2026-06-30 10:51:33.576119"
     },
     {
       "source": "github",
       "original_value": "https://github.com/aishapatel",
       "transformed_value": "https://github.com/aishapatel",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.926101"
+      "timestamp": "2026-06-30 10:51:33.576126"
     },
     {
       "source": "github",
       "original_value": "https://aishapatel.in",
       "transformed_value": "https://aishapatel.in",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.926103"
+      "timestamp": "2026-06-30 10:51:33.576128"
     }
   ]
 }

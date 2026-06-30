@@ -50,21 +50,21 @@
       "original_value": "Karan Joshi",
       "transformed_value": "Karan Joshi",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.927971"
+      "timestamp": "2026-06-30 10:51:33.578832"
     },
     {
       "source": "github",
       "original_value": "karan.joshi@gmail.com",
       "transformed_value": "karan.joshi@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.927977"
+      "timestamp": "2026-06-30 10:51:33.578839"
     },
     {
       "source": "github",
       "original_value": "Delhi, India",
       "transformed_value": "Delhi, India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.927979"
+      "timestamp": "2026-06-30 10:51:33.578841"
     },
     {
       "source": "github",
@@ -77,14 +77,14 @@
         "JavaScript"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.927982"
+      "timestamp": "2026-06-30 10:51:33.578845"
     },
     {
       "source": "github",
       "original_value": "https://github.com/karanjoshi",
       "transformed_value": "https://github.com/karanjoshi",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.927987"
+      "timestamp": "2026-06-30 10:51:33.578850"
     }
   ]
 }

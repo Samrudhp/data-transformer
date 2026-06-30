@@ -77,91 +77,91 @@
       "original_value": "Meera Iyer",
       "transformed_value": "Meera Iyer",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922264"
+      "timestamp": "2026-06-30 10:51:33.570661"
     },
     {
       "source": "ats",
       "original_value": "Meera Iyer",
       "transformed_value": "Meera Iyer",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922266"
+      "timestamp": "2026-06-30 10:51:33.570663"
     },
     {
       "source": "resume",
       "original_value": "Meera Iyer",
       "transformed_value": "Meera Iyer",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922268"
+      "timestamp": "2026-06-30 10:51:33.570665"
     },
     {
       "source": "csv",
       "original_value": "meera.iyer@gmail.com",
       "transformed_value": "meera.iyer@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922273"
+      "timestamp": "2026-06-30 10:51:33.570670"
     },
     {
       "source": "ats",
       "original_value": "meera.iyer@gmail.com",
       "transformed_value": "meera.iyer@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922275"
+      "timestamp": "2026-06-30 10:51:33.570672"
     },
     {
       "source": "resume",
       "original_value": "meera.iyer@gmail.com",
       "transformed_value": "meera.iyer@gmail.com",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922276"
+      "timestamp": "2026-06-30 10:51:33.570673"
     },
     {
       "source": "csv",
       "original_value": "+916677889900",
       "transformed_value": "+916677889900",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922278"
+      "timestamp": "2026-06-30 10:51:33.570675"
     },
     {
       "source": "ats",
       "original_value": "+916677889900",
       "transformed_value": "+916677889900",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922279"
+      "timestamp": "2026-06-30 10:51:33.570676"
     },
     {
       "source": "resume",
       "original_value": "+916677889900",
       "transformed_value": "+916677889900",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922281"
+      "timestamp": "2026-06-30 10:51:33.570678"
     },
     {
       "source": "csv",
       "original_value": "Pune",
       "transformed_value": "Pune",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922283"
+      "timestamp": "2026-06-30 10:51:33.570680"
     },
     {
       "source": "ats",
       "original_value": "Pune",
       "transformed_value": "Pune",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922284"
+      "timestamp": "2026-06-30 10:51:33.570681"
     },
     {
       "source": "csv",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922286"
+      "timestamp": "2026-06-30 10:51:33.570683"
     },
     {
       "source": "ats",
       "original_value": "India",
       "transformed_value": "India",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922287"
+      "timestamp": "2026-06-30 10:51:33.570684"
     },
     {
       "source": "ats",
@@ -186,7 +186,7 @@
         }
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922293"
+      "timestamp": "2026-06-30 10:51:33.570690"
     },
     {
       "source": "csv",
@@ -206,7 +206,7 @@
         "HTML"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922296"
+      "timestamp": "2026-06-30 10:51:33.570693"
     },
     {
       "source": "ats",
@@ -227,7 +227,7 @@
         "HTML"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922297"
+      "timestamp": "2026-06-30 10:51:33.570697"
     },
     {
       "source": "resume",
@@ -248,28 +248,28 @@
         "HTML"
       ],
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922299"
+      "timestamp": "2026-06-30 10:51:33.570699"
     },
     {
       "source": "csv",
       "original_value": "https://linkedin.com/in/meeraiyer",
       "transformed_value": "https://linkedin.com/in/meeraiyer",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922302"
+      "timestamp": "2026-06-30 10:51:33.570702"
     },
     {
       "source": "ats",
       "original_value": "https://linkedin.com/in/meeraiyer",
       "transformed_value": "https://linkedin.com/in/meeraiyer",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922304"
+      "timestamp": "2026-06-30 10:51:33.570707"
     },
     {
       "source": "resume",
       "original_value": "https://www.linkedin.com/in/meeraiyer",
       "transformed_value": "https://linkedin.com/in/meeraiyer",
       "pipeline_stage": "CanonicalCandidateBuilder",
-      "timestamp": "2026-06-30 10:12:17.922305"
+      "timestamp": "2026-06-30 10:51:33.570708"
     }
   ]
 }
