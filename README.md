@@ -1,5 +1,7 @@
 # Candidate Data Transformation Pipeline
 
+## Name : Samrudh P, Email : samrudhprakash3084@gmail.com
+
 > 🚀 **Get started quickly with the [Quick Start Guide](#quick-start).**
 
 An enterprise-inspired, modular data transformation pipeline that ingests heterogeneous candidate data from multiple sources, resolves duplicate identities, normalizes conflicting information, and generates configurable canonical candidate profiles.
